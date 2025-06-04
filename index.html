@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Q&A Study Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff; /* Blue */
+            --secondary-color: #6c757d; /* Gray */
+            --background-color: #f8f9fa; /* Light Gray */
+            --card-background: #ffffff; /* White */
+            --text-color: #333;
+            --code-background: #282c34; /* Dark for code */
+            --code-text-color: #abb2bf; /* Light gray for code text */
+            --code-comment-color: #5c6370; /* Darker gray for comments */
+            --code-keyword-color: #c678dd; /* Purple for keywords */
+            --code-string-color: #98c379; /* Green for strings */
+            --code-number-color: #d19a66; /* Orange for numbers */
+            --border-color: #e0e0e0;
+            --success-color: #28a745;
+            --info-color: #17a2b8;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            font-size: 2.5em;
+        }
+
+        .section-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8em;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+
+        .question-block {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+        }
+
+        .question-header {
+            padding: 18px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s ease;
+        }
+        .question-header:hover {
+            background-color: #f1f3f5;
+        }
+
+        .question-header h3 {
+            margin: 0;
+            font-size: 1.25em;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        .question-header .toggle-icon {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+        .question-block.open .toggle-icon {
+            transform: rotate(45deg);
+        }
+
+
+        .answer-content {
+            padding: 0 25px; /* Start with no vertical padding */
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        }
+        .question-block.open .answer-content {
+            padding: 20px 25px; /* Add padding when open */
+            max-height: 5000px; /* Large enough to fit content */
+        }
+
+
+        .answer-content p, .answer-content ul, .answer-content ol {
+            margin-bottom: 15px;
+        }
+        .answer-content strong {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        .answer-content ul {
+            list-style-type: disc;
+            padding-left: 25px;
+        }
+        .answer-content ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Code Block Styling */
+        pre {
+            background-color: var(--code-background);
+            color: var(--code-text-color);
+            font-family: 'Roboto Mono', monospace;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin: 15px 0;
+            border: 1px solid #444;
+        }
+        code {
+            font-family: 'Roboto Mono', monospace;
+        }
+        pre .code-comment { color: var(--code-comment-color); font-style: italic; }
+        pre .code-keyword { color: var(--code-keyword-color); font-weight: 500; }
+        pre .code-function { color: #61afef; } /* Light Blue for function names */
+        pre .code-variable { color: #e06c75; } /* Light Red for variables */
+        pre .code-string { color: var(--code-string-color); }
+        pre .code-number { color: var(--code-number-color); }
+        pre .code-operator { color: #56b6c2; } /* Cyan for operators */
+        pre .code-output-label { color: var(--info-color); font-weight: bold; display: block; margin-top: 10px; }
+        pre .code-output { color: #ccc; display: block; white-space: pre-wrap;}
+
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #e9ecef;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        td code { /* Inline code in tables */
+            background-color: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: var(--primary-color);
+        }
+
+        .explanation {
+            background-color: #e6f7ff; /* Light blue */
+            border-left: 4px solid var(--info-color);
+            padding: 10px 15px;
+            margin: 10px 0;
+            font-size: 0.9em;
+            border-radius: 4px;
+        }
+        .explanation p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            .section-title { font-size: 1.5em; }
+            .question-header h3 { font-size: 1.1em; }
+            pre { font-size: 0.85em; padding: 15px; }
+            table { font-size: 0.9em; }
+            th, td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Python Q&A Study Guide</h1>
+        </header>
+
+        <section id="part1">
+            <h2 class="section-title">Q.1 Each question carries 2 marks</h2>
+
+            <!-- Question 1.a -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>a) What are local and global variables?</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p><strong>Local Variable:</strong> A variable declared inside a function and is accessible only within that function's scope. It's created when the function is called and destroyed when the function returns.</p>
+                    <pre><code class="code-keyword">def</code> <code class="code-function">my_function</code>():
+  <code class="code-variable">x</code> <code class="code-operator">=</code> <code class="code-number">10</code>  <span class="code-comment"># x is a local variable</span>
+  <code class="code-keyword">print</code>(<code class="code-string">"Inside function, x ="</span>, <code class="code-variable">x</code>)
+
+<code class="code-function">my_function</code>()
+<span class="code-comment"># print(x) # This would cause an error, as x is not defined globally</span></code></pre>
+                    <div class="explanation">
+                        <p>In the example above, <code>x</code> is only known inside <code>my_function()</code>. Trying to access it outside will result in a <code>NameError</code>.</p>
+                    </div>
+
+                    <p><strong>Global Variable:</strong> A variable declared outside of any function, typically at the top level of a script. It can be accessed from any part of the code, both inside and outside functions (though modification inside a function requires the <code>global</code> keyword).</p>
+                    <pre><code class="code-variable">y</code> <code class="code-operator">=</code> <code class="code-number">20</code>  <span class="code-comment"># y is a global variable</span>
+
+<code class="code-keyword">def</code> <code class="code-function">another_function</code>():
+  <code class="code-keyword">print</code>(<code class="code-string">"Inside function, y ="</span>, <code class="code-variable">y</code>) <span class="code-comment"># Accessing global y</span>
+
+<code class="code-function">another_function</code>()
+<code class="code-keyword">print</code>(<code class="code-string">"Outside function, y ="</span>, <code class="code-variable">y</code>)</code></pre>
+                    <div class="explanation">
+                        <p>Here, <code>y</code> is defined globally and can be read by <code>another_function()</code>. To modify a global variable inside a function, you'd use <code>global y</code>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 1.b -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>b) Differentiate between compiler and interpreter?</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Compiler</th>
+                                <th>Interpreter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Translation</strong></td>
+                                <td>Translates the entire source code into machine code (or an intermediate code) at once, before execution.</td>
+                                <td>Translates and executes the source code line by line, or statement by statement.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Speed</strong></td>
+                                <td>The compiled program generally runs faster because the translation is already done. Compilation itself can take time.</td>
+                                <td>Slower overall execution speed because translation happens during runtime for each line. No separate compilation step means faster startup for small scripts.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Error Handling</strong></td>
+                                <td>Shows a list of all syntax errors and other static errors after the entire compilation process.</td>
+                                <td>Stops execution as soon as it encounters the first error. Easier for debugging individual lines.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Output</strong></td>
+                                <td>Generates an executable file (e.g., .exe) or intermediate bytecode.</td>
+                                <td>Does not typically produce a separate executable file; directly executes instructions.</td>
+                            </tr>
+                             <tr>
+                                <td><strong>Memory Requirement</strong></td>
+                                <td>Generally requires more memory during compilation for generating intermediate/object code.</td>
+                                <td>More memory efficient during the translation process as it processes line by line.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Example Languages</strong></td>
+                                <td>C, C++, Java (compiles to bytecode), Swift</td>
+                                <td>Python, JavaScript, Ruby, PHP</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="explanation">
+                        <p>Python is often described as an interpreted language, but CPython (the standard implementation) first compiles Python source code into bytecode (<code>.pyc</code> files), which is then executed by the Python Virtual Machine (PVM). So, it has elements of both.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 1.c -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>c) Write all the Arithmetic operators used in Python.</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p>Arithmetic operators are used to perform mathematical calculations:</p>
+                    <ul>
+                        <li><code><span class="code-operator">+</span></code> : <strong>Addition</strong> (e.g., <code>5 + 2</code> results in <code>7</code>)</li>
+                        <li><code><span class="code-operator">-</span></code> : <strong>Subtraction</strong> (e.g., <code>5 - 2</code> results in <code>3</code>)</li>
+                        <li><code><span class="code-operator">*</span></code> : <strong>Multiplication</strong> (e.g., <code>5 * 2</code> results in <code>10</code>)</li>
+                        <li><code><span class="code-operator">/</span></code> : <strong>Division</strong> (results in a float, e.g., <code>5 / 2</code> results in <code>2.5</code>)</li>
+                        <li><code><span class="code-operator">//</span></code> : <strong>Floor Division</strong> (divides and rounds down to the nearest whole number, e.g., <code>5 // 2</code> results in <code>2</code>)</li>
+                        <li><code><span class="code-operator">%</span></code> : <strong>Modulus</strong> (returns the remainder of the division, e.g., <code>5 % 2</code> results in <code>1</code>)</li>
+                        <li><code><span class="code-operator">**</span></code> : <strong>Exponentiation</strong> (raises to the power, e.g., <code>5 ** 2</code> results in <code>25</code>)</li>
+                    </ul>
+                    <pre><code class="code-variable">a</code> <code class="code-operator">=</code> <code class="code-number">10</code>
+<code class="code-variable">b</code> <code class="code-operator">=</code> <code class="code-number">3</code>
+<code class="code-keyword">print</code>(<code class="code-string">f"Addition (a + b): {a + b}"</code>)          <span class="code-comment"># Output: 13</span>
+<code class="code-keyword">print</code>(<code class="code-string">f"Subtraction (a - b): {a - b}"</code>)        <span class="code-comment"># Output: 7</span>
+<code class="code-keyword">print</code>(<code class="code-string">f"Multiplication (a * b): {a * b}"</code>)    <span class="code-comment"># Output: 30</span>
+<code class="code-keyword">print</code>(<code class="code-string">f"Division (a / b): {a / b}"</code>)            <span class="code-comment"># Output: 3.333...</span>
+<code class="code-keyword">print</code>(<code class="code-string">f"Floor Division (a // b): {a // b}"</code>)  <span class="code-comment"># Output: 3</span>
+<code class="code-keyword">print</code>(<code class="code-string">f"Modulus (a % b): {a % b}"</code>)            <span class="code-comment"># Output: 1</span>
+<code class="code-keyword">print</code>(<code class="code-string">f"Exponentiation (a ** b): {a ** b}"</code>)  <span class="code-comment"># Output: 1000</span></code></pre>
+                </div>
+            </div>
+
+            <!-- Question 1.d -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>d) What are the membership operators?</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p>Membership operators are used to test if a sequence (like a list, tuple, string, set, or dictionary keys) contains a specific value.</p>
+                    <ul>
+                        <li>
+                            <strong><code>in</code></strong>: Returns <code>True</code> if the specified value is found in the sequence. Otherwise, it returns <code>False</code>.
+                            <pre><code class="code-variable">my_list</code> <code class="code-operator">=</code> [<code class="code-number">1</code>, <code class="code-number">2</code>, <code class="code-number">3</code>, <code class="code-number">4</code>, <code class="code-number">5</code>]
+<code class="code-variable">result</code> <code class="code-operator">=</code> <code class="code-number">3</code> <code class="code-keyword">in</code> <code class="code-variable">my_list</code>
+<code class="code-keyword">print</code>(<code class="code-variable">result</code>)  <span class="code-comment"># Output: True</span>
+
+<code class="code-variable">my_string</code> <code class="code-operator">=</code> <code class="code-string">"hello"</code>
+<code class="code-variable">result_char</code> <code class="code-operator">=</code> <code class="code-string">'e'</code> <code class="code-keyword">in</code> <code class="code-variable">my_string</code>
+<code class="code-keyword">print</code>(<code class="code-variable">result_char</code>) <span class="code-comment"># Output: True</span></code></pre>
+                        </li>
+                        <li>
+                            <strong><code>not in</code></strong>: Returns <code>True</code> if the specified value is NOT found in the sequence. Otherwise, it returns <code>False</code>.
+                            <pre><code class="code-variable">my_list</code> <code class="code-operator">=</code> [<code class="code-number">1</code>, <code class="code-number">2</code>, <code class="code-number">3</code>, <code class="code-number">4</code>, <code class="code-number">5</code>]
+<code class="code-variable">result</code> <code class="code-operator">=</code> <code class="code-number">6</code> <code class="code-keyword">not in</code> <code class="code-variable">my_list</code>
+<code class="code-keyword">print</code>(<code class="code-variable">result</code>)  <span class="code-comment"># Output: True</span>
+
+<code class="code-variable">my_string</code> <code class="code-operator">=</code> <code class="code-string">"hello"</code>
+<code class="code-variable">result_char</code> <code class="code-operator">=</code> <code class="code-string">'x'</code> <code class="code-keyword">not in</code> <code class="code-variable">my_string</code>
+<code class="code-keyword">print</code>(<code class="code-variable">result_char</code>) <span class="code-comment"># Output: True</span></code></pre>
+                        </li>
+                    </ul>
+                    <div class="explanation">
+                        <p>These operators are very useful for conditional checks and searching within collections.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 1.e -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>e) Differentiate between break, continue and pass statements in Python.</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Statement</th>
+                                <th>Function / Purpose</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong><code>break</code></strong></td>
+                                <td>Exits the innermost enclosing <code>for</code> or <code>while</code> loop prematurely. Control passes to the statement immediately following the loop.</td>
+                                <td>
+                                    <pre><code class="code-keyword">for</code> <code class="code-variable">i</code> <code class="code-keyword">in</code> <code class="code-function">range</code>(<code class="code-number">5</code>):
+  <code class="code-keyword">if</code> <code class="code-variable">i</code> <code class="code-operator">==</code> <code class="code-number">3</code>:
+    <code class="code-keyword">break</code>  <span class="code-comment"># Loop terminates when i is 3</span>
+  <code class="code-keyword">print</code>(<code class="code-variable">i</code>)
+<span class="code-output-label">Output:</span><span class="code-output">0
+1
+2</span></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong><code>continue</code></strong></td>
+                                <td>Skips the rest of the code inside the current iteration of the loop and proceeds to the next iteration.</td>
+                                <td>
+                                    <pre><code class="code-keyword">for</code> <code class="code-variable">i</code> <code class="code-keyword">in</code> <code class="code-function">range</code>(<code class="code-number">5</code>):
+  <code class="code-keyword">if</code> <code class="code-variable">i</code> <code class="code-operator">==</code> <code class="code-number">3</code>:
+    <code class="code-keyword">continue</code> <span class="code-comment"># Skips printing 3</span>
+  <code class="code-keyword">print</code>(<code class="code-variable">i</code>)
+<span class="code-output-label">Output:</span><span class="code-output">0
+1
+2
+4</span></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong><code>pass</code></strong></td>
+                                <td>Acts as a null operation or a placeholder. It does nothing. It's used when a statement is syntactically required but you don't want any command or code to execute.</td>
+                                <td>
+                                    <pre><code class="code-keyword">if</code> <code class="code-variable">x</code> <code class="code-operator">></code> <code class="code-number">10</code>:
+  <code class="code-keyword">pass</code>  <span class="code-comment"># Placeholder for future code</span>
+<code class="code-keyword">else</code>:
+  <code class="code-keyword">print</code>(<code class="code-string">"x is not greater than 10"</span>)
+
+<code class="code-keyword">def</code> <code class="code-function">my_empty_function</code>():
+  <code class="code-keyword">pass</code> <span class="code-comment"># Defines an empty function</span></pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="explanation">
+                        <p><code>break</code> and <code>continue</code> are loop control statements, while <code>pass</code> is a general placeholder used in various contexts like empty function/class definitions or conditional blocks that will be implemented later.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ... Add other questions from Q.1 similarly ... -->
+            <!-- Question 1.f -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>f) Explain for loop with an example.</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p>A <code>for</code> loop in Python is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string) or other iterable objects. It executes a block of code for each item in the sequence.</p>
+                    <p><strong>Syntax:</strong></p>
+                    <pre><code class="code-keyword">for</code> <code class="code-variable">item</code> <code class="code-keyword">in</code> <code class="code-variable">sequence</code>:
+    <span class="code-comment"># body of the for loop</span>
+    <span class="code-comment"># statements to execute for each item</span></code></pre>
+                    <p><strong>Example: Iterating over a range of numbers</strong></p>
+                    <pre><code class="code-comment"># This loop will iterate from 1 up to (but not including) 6.</span>
+<code class="code-keyword">for</code> <code class="code-variable">i</code> <code class="code-keyword">in</code> <code class="code-function">range</code>(<code class="code-number">1</code>, <code class="code-number">6</code>):
+    <code class="code-keyword">print</code>(<code class="code-variable">i</code>)
+
+<span class="code-output-label">Output:</span><span class="code-output">1
+2
+3
+4
+5</span></pre>
+                    <div class="explanation">
+                        <p>In this example:
+                            <ul>
+                                <li><code>range(1, 6)</code> generates a sequence of numbers: 1, 2, 3, 4, 5.</li>
+                                <li>In each iteration, the variable <code>i</code> takes the next value from this sequence.</li>
+                                <li>The <code>print(i)</code> statement inside the loop is executed for each value of <code>i</code>.</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <p><strong>Example: Iterating over a list</strong></p>
+                    <pre><code class="code-variable">fruits</code> <code class="code-operator">=</code> [<code class="code-string">"apple"</code>, <code class="code-string">"banana"</code>, <code class="code-string">"cherry"</code>]
+<code class="code-keyword">for</code> <code class="code-variable">fruit</code> <code class="code-keyword">in</code> <code class="code-variable">fruits</code>:
+    <code class="code-keyword">print</code>(<code class="code-variable">fruit</code>)
+
+<span class="code-output-label">Output:</span><span class="code-output">apple
+banana
+cherry</span></pre>
+                </div>
+            </div>
+
+            <!-- Question 1.g -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>g) Write the use of range() function.</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p>The <code>range()</code> function is a built-in Python function used to generate an immutable sequence of numbers. It's commonly used with <code>for</code> loops to iterate a specific number of times or over a sequence of indices.</p>
+                    <p><strong>Syntax:</strong></p>
+                    <ul>
+                        <li><code>range(stop)</code>: Generates numbers from 0 up to (but not including) <code>stop</code>.
+                            <pre><code class="code-keyword">for</code> <code class="code-variable">i</code> <code class="code-keyword">in</code> <code class="code-function">range</code>(<code class="code-number">3</code>): <span class="code-comment"># stop = 3</span>
+    <code class="code-keyword">print</code>(<code class="code-variable">i</code>) <span class="code-comment"># Output: 0, 1, 2</span></pre>
+                        </li>
+                        <li><code>range(start, stop)</code>: Generates numbers from <code>start</code> up to (but not including) <code>stop</code>.
+                            <pre><code class="code-keyword">for</code> <code class="code-variable">i</code> <code class="code-keyword">in</code> <code class="code-function">range</code>(<code class="code-number">1</code>, <code class="code-number">4</code>): <span class="code-comment"># start = 1, stop = 4</span>
+    <code class="code-keyword">print</code>(<code class="code-variable">i</code>) <span class="code-comment"># Output: 1, 2, 3</span></pre>
+                        </li>
+                        <li><code>range(start, stop, step)</code>: Generates numbers from <code>start</code> up to (but not including) <code>stop</code>, incrementing by <code>step</code>.
+                            <pre><code class="code-keyword">for</code> <code class="code-variable">i</code> <code class="code-keyword">in</code> <code class="code-function">range</code>(<code class="code-number">1</code>, <code class="code-number">6</code>, <code class="code-number">2</code>): <span class="code-comment"># start = 1, stop = 6, step = 2</span>
+    <code class="code-keyword">print</code>(<code class="code-variable">i</code>) <span class="code-comment"># Output: 1, 3, 5</span></pre>
+                        </li>
+                    </ul>
+                    <div class="explanation">
+                        <p>Key uses of <code>range()</code>:
+                            <ul>
+                                <li>Controlling loop iterations: Execute a block of code a fixed number of times.</li>
+                                <li>Generating indices: To access elements of a list or other sequences by their index.</li>
+                                <li>Creating numerical sequences for various calculations.</li>
+                            </ul>
+                            It's memory efficient because it doesn't store all the numbers in memory at once; it generates them on demand.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 1.h -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>h) What is set? How does it differ from lists?</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p><strong>Set:</strong> A set is an <strong>unordered</strong> collection of <strong>unique</strong> elements. Sets are mutable (you can add or remove elements), but the elements themselves must be immutable (e.g., numbers, strings, tuples).</p>
+                    <pre><code class="code-variable">my_set</code> <code class="code-operator">=</code> {<code class="code-number">1</code>, <code class="code-number">2</code>, <code class="code-string">"hello"</code>, <code class="code-number">3</code>, <code class="code-number">2</code>} <span class="code-comment"># Duplicate '2' is ignored</span>
+<code class="code-keyword">print</code>(<code class="code-variable">my_set</code>) <span class="code-comment"># Output might be {1, 2, 3, 'hello'} or in a different order</span></pre>
+
+                    <p><strong>List:</strong> A list is an <strong>ordered</strong> collection of items that can be of different types. Lists are mutable and <strong>allow duplicate</strong> elements.</p>
+                    <pre><code class="code-variable">my_list</code> <code class="code-operator">=</code> [<code class="code-number">1</code>, <code class="code-number">2</code>, <code class="code-string">"hello"</code>, <code class="code-number">3</code>, <code class="code-number">2</code>]
+<code class="code-keyword">print</code>(<code class="code-variable">my_list</code>) <span class="code-comment"># Output: [1, 2, 'hello', 3, 2]</span></pre>
+
+                    <p><strong>Key Differences:</strong></p>
+                    <table>
+                        <thead>
+                            <tr><th>Feature</th><th>Set</th><th>List</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Ordering</strong></td><td>Unordered (elements have no specific sequence)</td><td>Ordered (elements maintain their insertion order)</td></tr>
+                            <tr><td><strong>Duplicates</strong></td><td>Does NOT allow duplicate elements</td><td>Allows duplicate elements</td></tr>
+                            <tr><td><strong>Indexing/Slicing</strong></td><td>Does NOT support indexing or slicing (due to being unordered)</td><td>Supports indexing and slicing to access elements</td></tr>
+                            <tr><td><strong>Mutability</strong></td><td>Mutable (can add/remove elements)</td><td>Mutable (can add/remove/change elements)</td></tr>
+                            <tr><td><strong>Syntax</strong></td><td>Created with curly braces <code>{}</code> or <code>set()</code> constructor. E.g., <code>{1, 2, 3}</code></td><td>Created with square brackets <code>[]</code> or <code>list()</code> constructor. E.g., <code>[1, 2, 3]</code></td></tr>
+                            <tr><td><strong>Use Cases</strong></td><td>Membership testing, removing duplicates, mathematical set operations (union, intersection, difference)</td><td>Storing collections of items where order matters, accessing items by position, sequences that can have duplicates.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Question 1.i -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>i) What is dictionary? Create a dictionary and print all the key values.</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p>A <strong>dictionary</strong> in Python is an unordered (in Python versions before 3.7, ordered in 3.7+) collection of items. Each item in a dictionary is a <strong>key-value pair</strong>.</p>
+                    <ul>
+                        <li>Keys must be unique and immutable (e.g., strings, numbers, tuples).</li>
+                        <li>Values can be of any data type and can be duplicated.</li>
+                        <li>Dictionaries are mutable.</li>
+                        <li>They are optimized for retrieving values when the key is known.</li>
+                    </ul>
+                    <p><strong>Example: Creating a dictionary and printing its keys</strong></p>
+                    <pre><code class="code-comment"># Creating a dictionary</span>
+<code class="code-variable">student</code> <code class="code-operator">=</code> {
+    <code class="code-string">"name"</code>: <code class="code-string">"Pratyush"</code>,
+    <code class="code-string">"age"</code>: <code class="code-number">20</code>,
+    <code class="code-string">"course"</code>: <code class="code-string">"BSc"</code>,
+    <code class="code-string">"is_enrolled"</code>: <code class="code-keyword">True</code>
+}
+
+<code class="code-comment"># Printing the dictionary</span>
+<code class="code-keyword">print</code>(<code class="code-string">"Dictionary:"</code>, <code class="code-variable">student</code>)
+
+<code class="code-comment"># Printing all the keys using the .keys() method</span>
+<code class="code-variable">all_keys</code> <code class="code-operator">=</code> <code class="code-variable">student</code>.<code class="code-function">keys</code>()
+<code class="code-keyword">print</code>(<code class="code-string">"Keys:"</code>, <code class="code-variable">all_keys</code>)
+<span class="code-output-label">Output for keys:</span><span class="code-output">dict_keys(['name', 'age', 'course', 'is_enrolled'])</span>
+
+<code class="code-comment"># You can also iterate through keys:</span>
+<code class="code-keyword">print</code>(<code class="code-string">"\nIterating through keys:"</code>)
+<code class="code-keyword">for</code> <code class="code-variable">key</code> <code class="code-keyword">in</code> <code class="code-variable">student</code>.<code class="code-function">keys</code>(): <span class="code-comment"># or simply 'for key in student:'</span>
+    <code class="code-keyword">print</code>(<code class="code-variable">key</code>)
+<span class="code-output-label">Output for iteration:</span><span class="code-output">name
+age
+course
+is_enrolled</span></pre>
+                    <div class="explanation">
+                        <p>The <code>.keys()</code> method returns a view object that displays a list of all the keys in the dictionary. You can convert this view object to a list if needed: <code>list(student.keys())</code>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 1.j -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>j) What is tuple? Create a tuple and print it in reverse order.</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p>A <strong>tuple</strong> in Python is an <strong>ordered</strong> and <strong>immutable</strong> collection of items. This means once a tuple is created, you cannot change, add, or remove its elements.</p>
+                    <ul>
+                        <li>Tuples can contain items of different data types.</li>
+                        <li>They are defined by enclosing comma-separated values within parentheses <code>()</code>. Parentheses are optional if the context is clear.</li>
+                        <li>Often used to store related pieces of information that should not be modified, like coordinates or records.</li>
+                    </ul>
+                    <p><strong>Example: Creating a tuple and printing it in reverse order</strong></p>
+                    <pre><code class="code-comment"># Creating a tuple</span>
+<code class="code-variable">my_tuple</code> <code class="code-operator">=</code> (<code class="code-number">1</code>, <code class="code-number">2</code>, <code class="code-string">"Python"</code>, <code class="code-number">3.14</code>, <code class="code-keyword">True</code>)
+<code class="code-keyword">print</code>(<code class="code-string">"Original tuple:"</span>, <code class="code-variable">my_tuple</code>)
+
+<code class="code-comment"># Printing the tuple in reverse order using slicing</span>
+<code class="code-variable">reversed_tuple</code> <code class="code-operator">=</code> <code class="code-variable">my_tuple</code>[::-<code class="code-number">1</code>]
+<code class="code-keyword">print</code>(<code class="code-string">"Reversed tuple:"</span>, <code class="code-variable">reversed_tuple</code>)
+<span class="code-output-label">Output:</span><span class="code-output">Original tuple: (1, 2, 'Python', 3.14, True)
+Reversed tuple: (True, 3.14, 'Python', 2, 1)</span></pre>
+                    <div class="explanation">
+                        <p>The slicing notation <code>[::-1]</code> creates a reversed copy of the tuple.
+                        Since tuples are immutable, this operation doesn't change the original <code>my_tuple</code>; it creates a new tuple that is reversed.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="part2">
+            <h2 class="section-title">Q.2 Each question carries 5 marks</h2>
+
+            <!-- Question 2.a -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>a) Write a function to input a number and check if it is prime number or not.</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p>A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.</p>
+                    <pre><code class="code-keyword">def</code> <code class="code-function">is_prime</code>(<code class="code-variable">n</code>):
+    <code class="code-comment"># Step 1: Handle base cases</span>
+    <code class="code-keyword">if</code> <code class="code-variable">n</code> <code class="code-operator"><=</code> <code class="code-number">1</code>:
+        <code class="code-keyword">return</code> <code class="code-keyword">False</code>  <span class="code-comment"># Numbers less than or equal to 1 are not prime</span>
+
+    <code class="code-comment"># Step 2: Iterate from 2 up to the square root of n</span>
+    <code class="code-comment"># We only need to check divisibility up to sqrt(n) because if n has a divisor larger than sqrt(n),</span>
+    <code class="code-comment"># it must also have a divisor smaller than sqrt(n).</span>
+    <code class="code-keyword">for</code> <code class="code-variable">i</code> <code class="code-keyword">in</code> <code class="code-function">range</code>(<code class="code-number">2</code>, <code class="code-function">int</code>(<code class="code-variable">n</code><code class="code-operator">**</code><code class="code-number">0.5</code>) <code class="code-operator">+</code> <code class="code-number">1</code>):
+        <code class="code-comment"># Step 3: Check for divisibility</span>
+        <code class="code-keyword">if</code> <code class="code-variable">n</code> <code class="code-operator">%</code> <code class="code-variable">i</code> <code class="code-operator">==</code> <code class="code-number">0</code>:
+            <code class="code-keyword">return</code> <code class="code-keyword">False</code>  <span class="code-comment"># If n is divisible by any number other than 1 and itself, it's not prime</span>
+
+    <code class="code-comment"># Step 4: If no divisors were found, the number is prime</span>
+    <code class="code-keyword">return</code> <code class="code-keyword">True</code>
+
+<code class="code-comment"># Get input from the user</span>
+<code class="code-keyword">try</code>:
+    <code class="code-variable">num</code> <code class="code-operator">=</code> <code class="code-function">int</code>(<code class="code-function">input</code>(<code class="code-string">"Enter a number: "</code>))
+
+    <code class="code-comment"># Check and print the result</span>
+    <code class="code-keyword">if</code> <code class="code-function">is_prime</code>(<code class="code-variable">num</code>):
+        <code class="code-keyword">print</code>(<code class="code-string">f"{num} is a Prime number"</code>)
+    <code class="code-keyword">else</code>:
+        <code class="code-keyword">print</code>(<code class="code-string">f"{num} is Not a Prime number"</code>)
+<code class="code-keyword">except</code> <code class="code-variable">ValueError</code>:
+    <code class="code-keyword">print</code>(<code class="code-string">"Invalid input. Please enter an integer."</code>)</code></pre>
+                    <div class="explanation">
+                        <p><strong>Line-by-line explanation of <code>is_prime(n)</code>:</strong>
+                            <ul>
+                                <li><code>if n <= 1: return False</code>: Prime numbers are greater than 1. So, 0, 1, and negative numbers are not prime.</li>
+                                <li><code>for i in range(2, int(n**0.5) + 1):</code>: This loop iterates through potential divisors.
+                                    <ul>
+                                        <li>It starts from 2 because 1 is a divisor of all numbers.</li>
+                                        <li>It goes up to the square root of <code>n</code> (<code>int(n**0.5) + 1</code>). This is an optimization: if <code>n</code> has a divisor larger than its square root, it must also have a divisor smaller than its square root. So, we only need to check up to the square root. We add 1 because <code>range</code> excludes the stop value.</li>
+                                    </ul>
+                                </li>
+                                <li><code>if n % i == 0: return False</code>: If <code>n</code> is perfectly divisible by <code>i</code> (meaning <code>i</code> is a divisor other than 1 and <code>n</code> itself), then <code>n</code> is not prime, and the function immediately returns <code>False</code>.</li>
+                                <li><code>return True</code>: If the loop completes without finding any divisors, it means <code>n</code> is only divisible by 1 and itself, so it's a prime number.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+                       <!-- Question 2.b -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>b) Write a python program to find the roots of a quadratic equation.</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p>A quadratic equation is an equation of the form: <strong>ax² + bx + c = 0</strong>, where a, b, and c are coefficients and a ≠ 0.</p>
+                    <p>The roots of a quadratic equation can be found using the quadratic formula:</p>
+                    <p><strong>x = (-b ± √(b² - 4ac)) / 2a</strong></p>
+                    <p>The term <strong>d = b² - 4ac</strong> is called the discriminant. The nature of the roots depends on the value of d:</p>
+                    <ul>
+                        <li>If d > 0, the roots are real and distinct.</li>
+                        <li>If d = 0, the roots are real and equal.</li>
+                        <li>If d < 0, the roots are complex and distinct (conjugate pairs).</li>
+                    </ul>
+                    <pre><code class="code-keyword">import</code> cmath <span class="code-comment"># Import cmath module for handling complex square roots</span>
+
+<code class="code-keyword">def</code> <code class="code-function">find_quadratic_roots</code>(<code class="code-variable">a</code>, <code class="code-variable">b</code>, <code class="code-variable">c</code>):
+    <code class="code-string">"""
+    Calculates the roots of a quadratic equation ax^2 + bx + c = 0.
+    Args:
+        a (float/int): Coefficient of x^2 (must not be zero).
+        b (float/int): Coefficient of x.
+        c (float/int): Constant term.
+    Returns:
+        tuple: A tuple containing the two roots (can be complex).
+               Returns None if 'a' is zero.
+    """</code>
+    <code class="code-keyword">if</code> <code class="code-variable">a</code> <code class="code-operator">==</code> <code class="code-number">0</code>:
+        <code class="code-keyword">print</code>(<code class="code-string">"Coefficient 'a' cannot be zero for a quadratic equation."</code>)
+        <code class="code-keyword">return</code> <code class="code-keyword">None</code>
+
+    <code class="code-comment"># Calculate the discriminant</span>
+    <code class="code-variable">discriminant</code> <code class="code-operator">=</code> (<code class="code-variable">b</code><code class="code-operator">**</code><code class="code-number">2</code>) <code class="code-operator">-</code> (<code class="code-number">4</code> <code class="code-operator">*</code> <code class="code-variable">a</code> <code class="code-operator">*</code> <code class="code-variable">c</code>)
+
+    <code class="code-comment"># Find the roots using the cmath.sqrt() for complex number support</span>
+    <code class="code-variable">root1</code> <code class="code-operator">=</code> (<code class="code-operator">-</code><code class="code-variable">b</code> <code class="code-operator">-</code> cmath.<code class="code-function">sqrt</code>(<code class="code-variable">discriminant</code>)) <code class="code-operator">/</code> (<code class="code-number">2</code> <code class="code-operator">*</code> <code class="code-variable">a</code>)
+    <code class="code-variable">root2</code> <code class="code-operator">=</code> (<code class="code-operator">-</code><code class="code-variable">b</code> <code class="code-operator">+</code> cmath.<code class="code-function">sqrt</code>(<code class="code-variable">discriminant</code>)) <code class="code-operator">/</code> (<code class="code-number">2</code> <code class="code-operator">*</code> <code class="code-variable">a</code>)
+
+    <code class="code-keyword">return</code> <code class="code-variable">root1</code>, <code class="code-variable">root2</code>
+
+<code class="code-comment"># Example usage: ax^2 + bx + c = 0</span>
+<code class="code-comment"># Example 1: Two distinct real roots (x^2 - 5x + 6 = 0 => roots are 2, 3)</span>
+<code class="code-variable">a1</code>, <code class="code-variable">b1</code>, <code class="code-variable">c1</code> <code class="code-operator">=</code> <code class="code-number">1</code>, <code class="code-operator">-</code><code class="code-number">5</code>, <code class="code-number">6</code>
+<code class="code-variable">roots1</code> <code class="code-operator">=</code> <code class="code-function">find_quadratic_roots</code>(<code class="code-variable">a1</code>, <code class="code-variable">b1</code>, <code class="code-variable">c1</code>)
+<code class="code-keyword">print</code>(<code class="code-string">f"For equation {a1}x^2 + {b1}x + {c1} = 0, Roots are: {roots1}"</code>)
+<span class="code-output-label">Output:</span><span class="code-output">For equation 1x^2 + -5x + 6 = 0, Roots are: ((2+0j), (3+0j))</span>
+
+<code class="code-comment"># Example 2: Two equal real roots (x^2 - 4x + 4 = 0 => roots are 2, 2)</span>
+<code class="code-variable">a2</code>, <code class="code-variable">b2</code>, <code class="code-variable">c2</code> <code class="code-operator">=</code> <code class="code-number">1</code>, <code class="code-operator">-</code><code class="code-number">4</code>, <code class="code-number">4</code>
+<code class="code-variable">roots2</code> <code class="code-operator">=</code> <code class="code-function">find_quadratic_roots</code>(<code class="code-variable">a2</code>, <code class="code-variable">b2</code>, <code class="code-variable">c2</code>)
+<code class="code-keyword">print</code>(<code class="code-string">f"For equation {a2}x^2 + {b2}x + {c2} = 0, Roots are: {roots2}"</code>)
+<span class="code-output-label">Output:</span><span class="code-output">For equation 1x^2 + -4x + 4 = 0, Roots are: ((2+0j), (2+0j))</span>
+
+<code class="code-comment"># Example 3: Two complex roots (x^2 + x + 1 = 0)</span>
+<code class="code-variable">a3</code>, <code class="code-variable">b3</code>, <code class="code-variable">c3</code> <code class="code-operator">=</code> <code class="code-number">1</code>, <code class="code-number">1</code>, <code class="code-number">1</code>
+<code class="code-variable">roots3</code> <code class="code-operator">=</code> <code class="code-function">find_quadratic_roots</code>(<code class="code-variable">a3</code>, <code class="code-variable">b3</code>, <code class="code-variable">c3</code>)
+<code class="code-keyword">print</code>(<code class="code-string">f"For equation {a3}x^2 + {b3}x + {c3} = 0, Roots are: {roots3}"</code>)
+<span class="code-output-label">Output:</span><span class="code-output">For equation 1x^2 + 1x + 1 = 0, Roots are: ((-0.5-0.8660254037844386j), (-0.5+0.8660254037844386j))</span>
+
+<code class="code-comment"># Get input from user</span>
+<code class="code-keyword">print</code>(<code class="code-string">"\nEnter coefficients for your quadratic equation (ax^2 + bx + c = 0):"</code>)
+<code class="code-keyword">try</code>:
+    <code class="code-variable">coeff_a</code> <code class="code-operator">=</code> <code class="code-function">float</code>(<code class="code-function">input</code>(<code class="code-string">"Enter coefficient a: "</code>))
+    <code class="code-variable">coeff_b</code> <code class="code-operator">=</code> <code class="code-function">float</code>(<code class="code-function">input</code>(<code class="code-string">"Enter coefficient b: "</code>))
+    <code class="code-variable">coeff_c</code> <code class="code-operator">=</code> <code class="code-function">float</code>(<code class="code-function">input</code>(<code class="code-string">"Enter coefficient c: "</code>))
+    <code class="code-variable">user_roots</code> <code class="code-operator">=</code> <code class="code-function">find_quadratic_roots</code>(<code class="code-variable">coeff_a</code>, <code class="code-variable">coeff_b</code>, <code class="code-variable">coeff_c</code>)
+    <code class="code-keyword">if</code> <code class="code-variable">user_roots</code>:
+        <code class="code-keyword">print</code>(<code class="code-string">f"The roots are: {user_roots[0]} and {user_roots[1]}"</code>)
+<code class="code-keyword">except</code> <code class="code-variable">ValueError</code>:
+    <code class="code-keyword">print</code>(<code class="code-string">"Invalid input. Please enter numeric coefficients."</code>)
+</code></pre>
+                    <div class="explanation">
+                        <p><strong>Explanation:</strong>
+                            <ul>
+                                <li><code>import cmath</code>: The <code>cmath</code> module (complex math) is imported because the discriminant (b² - 4ac) can be negative, resulting in complex roots. <code>cmath.sqrt()</code> can handle square roots of negative numbers.
+                                </li>
+                                <li><code>if a == 0:</code>: Checks if the equation is truly quadratic. If 'a' is 0, it's a linear equation.</li>
+                                <li><code>discriminant = (b**2) - (4 * a * c)</code>: Calculates the discriminant.</li>
+                                <li>The two roots <code>root1</code> and <code>root2</code> are calculated using the standard quadratic formula.
+                                </li>
+                                <li>The function returns a tuple containing the two roots. Even if the roots are real, <code>cmath</code> will represent them as complex numbers with an imaginary part of 0 (e.g., <code>(2+0j)</code>).</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2.c -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>c) Create a list having 10 elements. Then perform delete, insert and sort operation. Finally display the list.</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p>Lists in Python are ordered, mutable (changeable) collections that allow duplicate elements. Here's how to perform the requested operations:</p>
+                    <pre><code class="code-comment"># Step 1: Create a list with 10 elements</span>
+<code class="code-variable">my_list</code> <code class="code-operator">=</code> [<code class="code-number">10</code>, <code class="code-number">5</code>, <code class="code-number">8</code>, <code class="code-number">20</code>, <code class="code-number">15</code>, <code class="code-number">3</code>, <code class="code-number">7</code>, <code class="code-number">2</code>, <code class="code-number">18</code>, <code class="code-number">1</code>]
+<code class="code-keyword">print</code>(<code class="code-string">f"Original List: {my_list}"</code>)
+<span class="code-output-label">Output:</span><span class="code-output">Original List: [10, 5, 8, 20, 15, 3, 7, 2, 18, 1]</span>
+
+<code class="code-comment"># Step 2: Perform Insert operation</span>
+<code class="code-comment"># list.insert(index, element) - Inserts 'element' at the specified 'index'.</span>
+<code class="code-comment"># Let's insert the number 99 at index 2 (which will be the 3rd position).</span>
+<code class="code-variable">my_list</code>.<code class="code-function">insert</code>(<code class="code-number">2</code>, <code class="code-number">99</code>)
+<code class="code-keyword">print</code>(<code class="code-string">f"After Insert (99 at index 2): {my_list}"</code>)
+<span class="code-output-label">Output:</span><span class="code-output">After Insert (99 at index 2): [10, 5, 99, 8, 20, 15, 3, 7, 2, 18, 1]</span>
+
+<code class="code-comment"># Step 3: Perform Delete operation</span>
+<code class="code-comment"># There are several ways to delete:</span>
+<code class="code-comment">#   - list.remove(value): Removes the first occurrence of 'value'. Raises ValueError if not found.</span>
+<code class="code-comment">#   - del list[index]: Deletes the element at 'index'.</span>
+<code class="code-comment">#   - list.pop(index_optional): Removes and returns the element at 'index' (default is last element).</span>
+
+<code class="code-comment"># Let's remove the element with value 20 using list.remove().</span>
+<code class="code-keyword">try</code>:
+    <code class="code-variable">my_list</code>.<code class="code-function">remove</code>(<code class="code-number">20</code>)
+    <code class="code-keyword">print</code>(<code class="code-string">f"After Delete (removed 20): {my_list}"</code>)
+<span class="code-output-label">Output:</span><span class="code-output">After Delete (removed 20): [10, 5, 99, 8, 15, 3, 7, 2, 18, 1]</span>
+<code class="code-keyword">except</code> <code class="code-variable">ValueError</code>:
+    <code class="code-keyword">print</code>(<code class="code-string">"Value 20 not found in the list for removal."</code>)
+
+<code class="code-comment"># Alternative: Delete element at a specific index (e.g., index 4, which is 15 now)</span>
+<code class="code-comment"># if len(my_list) > 4:</span>
+<code class="code-comment">#    del my_list[4]</span>
+<code class="code-comment">#    print(f"After Delete (element at index 4): {my_list}")</span>
+
+
+<code class="code-comment"># Step 4: Perform Sort operation</span>
+<code class="code-comment"># list.sort() - Sorts the list in-place (modifies the original list). Ascending by default.</span>
+<code class="code-comment"># To sort in descending order: list.sort(reverse=True)</span>
+<code class="code-variable">my_list</code>.<code class="code-function">sort</code>()
+<code class="code-keyword">print</code>(<code class="code-string">f"After Sort (ascending): {my_list}"</code>)
+<span class="code-output-label">Output:</span><span class="code-output">After Sort (ascending): [1, 2, 3, 5, 7, 8, 10, 15, 18, 99]</span>
+
+<code class="code-comment"># Step 5: Finally display the list (already done in the sort step's print)</span>
+<code class="code-keyword">print</code>(<code class="code-string">f"\nFinal Modified and Sorted List: {my_list}"</code>)
+<span class="code-output-label">Output:</span><span class="code-output">Final Modified and Sorted List: [1, 2, 3, 5, 7, 8, 10, 15, 18, 99]</span></code></pre>
+                    <div class="explanation">
+                        <p><strong>Breakdown of Operations:</strong>
+                            <ul>
+                                <li><strong>Creation:</strong> <code>my_list = [...]</code> simply initializes the list with the given elements.</li>
+                                <li><strong><code>insert(index, element)</code>:</strong>
+                                    <ul>
+                                        <li><code>my_list.insert(2, 99)</code> shifts the element originally at index 2 (which was <code>8</code>) and all subsequent elements one position to the right to make space for <code>99</code>.</li>
+                                    </ul>
+                                </li>
+                                <li><strong><code>remove(value)</code>:</strong>
+                                    <ul>
+                                        <li><code>my_list.remove(20)</code> searches for the first occurrence of the value <code>20</code> in the list and removes it. If <code>20</code> appeared multiple times, only the first one would be removed.</li>
+                                    </ul>
+                                </li>
+                                <li><strong><code>sort()</code>:</strong>
+                                    <ul>
+                                        <li><code>my_list.sort()</code> modifies the list <code>my_list</code> directly by arranging its elements in ascending order. For strings, it would be alphabetical order.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2.d -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>d) Write the use of various string functions.</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p>Python strings are immutable sequences of characters and come with a rich set of built-in methods (functions) to perform various operations. Here are some common and useful string functions:</p>
+                    <pre><code class="code-comment"># Let's define a sample string to work with</span>
+<code class="code-variable">s</code> <code class="code-operator">=</code> <code class="code-string">"  Hello Python World!  "</code>
+<code class="code-keyword">print</code>(<code class="code-string">f"Original string: '{s}'"</code>)</code></pre>
+
+                    <p><strong>1. Case Conversion:</strong></p>
+                    <ul>
+                        <li><code>s.lower()</code>: Converts all uppercase characters in the string to lowercase.
+                            <pre><code class="code-keyword">print</code>(<code class="code-string">f"lower(): '{s.lower()}'"</code>) <span class="code-comment"># Output: '  hello python world!  '</span></pre>
+                        </li>
+                        <li><code>s.upper()</code>: Converts all lowercase characters in the string to uppercase.
+                            <pre><code class="code-keyword">print</code>(<code class="code-string">f"upper(): '{s.upper()}'"</code>) <span class="code-comment"># Output: '  HELLO PYTHON WORLD!  '</span></pre>
+                        </li>
+                        <li><code>s.title()</code>: Converts the first character of each word to uppercase and the rest to lowercase.
+                            <pre><code class="code-keyword">print</code>(<code class="code-string">f"title(): '{s.title()}'"</code>) <span class="code-comment"># Output: '  Hello Python World!  ' (Note: leading spaces affect this)</span></pre>
+                            <div class="explanation"><p>If you strip whitespace first: <code>s.strip().title()</code> would give <code>'Hello Python World!'</code></p></div>
+                        </li>
+                        <li><code>s.capitalize()</code>: Converts the first character of the string to uppercase and the rest to lowercase.
+                            <pre><code class="code-keyword">print</code>(<code class="code-string">f"capitalize(): '{s.capitalize()}'"</code>) <span class="code-comment"># Output: '  hello python world!  '</span></pre>
+                        </li>
+                        <li><code>s.swapcase()</code>: Converts uppercase characters to lowercase and lowercase to uppercase.
+                            <pre><code class="code-variable">mixed_case</code> <code class="code-operator">=</code> <code class="code-string">"PyThOn"</code>
+<code class="code-keyword">print</code>(<code class="code-string">f"swapcase() on '{mixed_case}': '{mixed_case.swapcase()}'"</code>) <span class="code-comment"># Output: 'pYtHoN'</span></pre>
+                        </li>
+                    </ul>
+
+                    <p><strong>2. Searching and Finding:</strong></p>
+                    <ul>
+                        <li><code>s.find(substring)</code>: Returns the lowest index in the string where <code>substring</code> is found. Returns -1 if not found.
+                            <pre><code class="code-keyword">print</code>(<code class="code-string">f"find('Python'): {s.find('Python')}"</code>) <span class="code-comment"># Output: 8 (index of 'P')</span>
+<code class="code-keyword">print</code>(<code class="code-string">f"find('Java'): {s.find('Java')}"</code>)   <span class="code-comment"># Output: -1</span></pre>
+                        </li>
+                        <li><code>s.index(substring)</code>: Similar to <code>find()</code>, but raises a <code>ValueError</code> if the substring is not found.
+                            <pre><code class="code-comment"># print(s.index('Java')) # This would cause a ValueError</span></pre>
+                        </li>
+                        <li><code>s.startswith(prefix)</code>: Returns <code>True</code> if the string starts with the specified <code>prefix</code>, otherwise <code>False</code>.
+                            <pre><code class="code-keyword">print</code>(<code class="code-string">f"startswith('  Hello'): {s.startswith('  Hello')}"</code>) <span class="code-comment"># Output: True</span></pre>
+                        </li>
+                        <li><code>s.endswith(suffix)</code>: Returns <code>True</code> if the string ends with the specified <code>suffix</code>, otherwise <code>False</code>.
+                            <pre><code class="code-keyword">print</code>(<code class="code-string">f"endswith('World!  '): {s.endswith('World!  ')}"</code>) <span class="code-comment"># Output: True</span></pre>
+                        </li>
+                        <li><code>s.count(substring)</code>: Returns the number of non-overlapping occurrences of <code>substring</code>.
+                            <pre><code class="code-variable">text</code> <code class="code-operator">=</code> <code class="code-string">"banana"</code>
+<code class="code-keyword">print</code>(<code class="code-string">f"count('a' in '{text}'): {text.count('a')}"</code>) <span class="code-comment"># Output: 3</span></pre>
+                        </li>
+                    </ul>
+
+                    <p><strong>3. Modification and Replacement:</strong></p>
+                    <ul>
+                        <li><code>s.replace(old, new)</code>: Returns a new string where all occurrences of <code>old</code> substring are replaced with <code>new</code>.
+                            <pre><code class="code-keyword">print</code>(<code class="code-string">f"replace('Python', 'World'): '{s.replace('Python', 'Programming')}'"</code>)
+<span class="code-comment"># Output: '  Hello Programming World!  '</span></pre>
+                        </li>
+                        <li><code>s.strip()</code>: Returns a new string with leading and trailing whitespace removed.
+                            <pre><code class="code-keyword">print</code>(<code class="code-string">f"strip(): '{s.strip()}'"</code>) <span class="code-comment"># Output: 'Hello Python World!'</span></pre>
+                        </li>
+                        <li><code>s.lstrip()</code>: Removes leading whitespace. <code>s.rstrip()</code>: Removes trailing whitespace.</li>
+                    </ul>
+
+                    <p><strong>4. Splitting and Joining:</strong></p>
+                    <ul>
+                        <li><code>s.split(separator)</code>: Splits the string at the specified <code>separator</code> and returns a list of substrings. If no separator is specified, splits by whitespace.
+                            <pre><code class="code-variable">words</code> <code class="code-operator">=</code> <code class="code-variable">s</code>.<code class="code-function">strip</code>().<code class="code-function">split</code>() <span class="code-comment"># Split by space after stripping</span>
+<code class="code-keyword">print</code>(<code class="code-string">f"split(): {words}"</code>) <span class="code-comment"># Output: ['Hello', 'Python', 'World!']</span>
+
+<code class="code-variable">data</code> <code class="code-operator">=</code> <code class="code-string">"apple,banana,cherry"</code>
+<code class="code-keyword">print</code>(<code class="code-string">f"split(',' on '{data}'): {data.split(',')}"</code>) <span class="code-comment"># Output: ['apple', 'banana', 'cherry']</span></pre>
+                        </li>
+                        <li><code>separator.join(iterable)</code>: Joins the elements of an iterable (like a list of strings) into a single string, with <code>separator</code> between each element.
+                            <pre><code class="code-variable">my_list</code> <code class="code-operator">=</code> [<code class="code-string">'Hello'</code>, <code class="code-string">'Python'</code>, <code class="code-string">'World'</code>]
+<code class="code-variable">joined_string</code> <code class="code-operator">=</code> <code class="code-string">' '</code>.<code class="code-function">join</code>(<code class="code-variable">my_list</code>)
+<code class="code-keyword">print</code>(<code class="code-string">f"join with space: '{joined_string}'"</code>) <span class="code-comment"># Output: 'Hello Python World'</span></pre>
+                        </li>
+                    </ul>
+
+                    <p><strong>5. Checking String Properties:</strong></p>
+                    <ul>
+                        <li><code>s.isalpha()</code>: Returns <code>True</code> if all characters are alphabetic and there is at least one character.
+                        <li><code>s.isdigit()</code> or <code>s.isnumeric()</code>: Returns <code>True</code> if all characters are digits.
+                        <li><code>s.isalnum()</code>: Returns <code>True</code> if all characters are alphanumeric.
+                        <li><code>s.isspace()</code>: Returns <code>True</code> if all characters are whitespace.
+                        <li><code>s.isupper()</code> / <code>s.islower()</code>: Checks if all cased characters are uppercase/lowercase.
+                            <pre><code class="code-keyword">print</code>(<code class="code-string">f"'Python'.isalpha(): {'Python'.isalpha()}"</code>) <span class="code-comment"># True</span>
+<code class="code-keyword">print</code>(<code class="code-string">f"'123'.isdigit(): {'123'.isdigit()}"</code>)     <span class="code-comment"># True</span>
+<code class="code-keyword">print</code>(<code class="code-string">f"' '.isspace(): {' '.isspace()}"</code>)       <span class="code-comment"># True</span></pre>
+                        </li>
+                    </ul>
+
+                    <p><strong>6. Length:</strong></p>
+                    <ul>
+                        <li><code>len(s)</code>: (This is a built-in function, not a string method) Returns the number of characters in the string.
+                            <pre><code class="code-keyword">print</code>(<code class="code-string">f"len(s): {len(s)}"</code>) <span class="code-comment"># Output for original s: 25</span></pre>
+                        </li>
+                    </ul>
+                     <div class="explanation">
+                        <p>These are just some of the most commonly used string functions. Python's string objects have many more methods for various text processing tasks. Remember that string methods return <strong>new strings</strong> as strings are immutable; they don't modify the original string in place.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2.e -->
+            <div class="question-block">
+                <div class="question-header">
+                    <h3>e) Create a function to find the sum of the given series: 1 + 3 + 5 + 7 + ... + n (n is input)</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer-content">
+                    <p>The given series is a sum of odd numbers up to <code>n</code> (if <code>n</code> itself is odd and included) or up to the largest odd number less than or equal to <code>n</code>.</p>
+
+                    <p><strong>Method 1: Using a loop with a step of 2</strong></p>
+                    <pre><code class="code-keyword">def</code> <code class="code-function">odd_series_sum_loop</code>(<code class="code-variable">limit_n</code>):
+    <code class="code-string">"""
+    Calculates the sum of the odd series 1 + 3 + 5 + ... up to n.
+    Args:
+        limit_n (int): The upper limit of the series.
+    Returns:
+        int: The sum of the odd numbers in the series.
+    """</code>
+    <code class="code-variable">total_sum</code> <code class="code-operator">=</code> <code class="code-number">0</code>
+    <code class="code-comment"># Iterate through odd numbers starting from 1 up to limit_n (inclusive)</span>
+    <code class="code-comment"># The step is 2 to only consider odd numbers.</span>
+    <code class="code-keyword">for</code> <code class="code-variable">i</code> <code class="code-keyword">in</code> <code class="code-function">range</code>(<code class="code-number">1</code>, <code class="code-variable">limit_n</code> <code class="code-operator">+</code> <code class="code-number">1</code>, <code class="code-number">2</code>):
+        <code class="code-variable">total_sum</code> <code class="code-operator">+=</code> <code class="code-variable">i</code> <span class="code-comment"># Add the current odd number to the total</span>
+    <code class="code-keyword">return</code> <code class="code-variable">total_sum</code>
+
+<code class="code-comment"># Get input from the user for n</span>
+<code class="code-keyword">try</code>:
+    <code class="code-variable">n_value</code> <code class="code-operator">=</code> <code class="code-function">int</code>(<code class="code-function">input</code>(<code class="code-string">"Enter the value of n for the series (1+3+5+...+n): "</code>))
+    <code class="code-keyword">if</code> <code class="code-variable">n_value</code> <code class="code-operator"><</code> <code class="code-number">1</code>:
+        <code class="code-keyword">print</code>(<code class="code-string">"Please enter a positive integer for n."</code>)
+    <code class="code-keyword">else</code>:
+        <code class="code-variable">result_sum</code> <code class="code-operator">=</code> <code class="code-function">odd_series_sum_loop</code>(<code class="code-variable">n_value</code>)
+        <code class="code-keyword">print</code>(<code class="code-string">f"The sum of the odd series up to {n_value} is: {result_sum}"</code>)
+<code class="code-keyword">except</code> <code class="code-variable">ValueError</code>:
+    <code class="code-keyword">print</code>(<code class="code-string">"Invalid input. Please enter an integer."</code>)
+
+<span class="code-comment"># Example Test Cases:</span>
+<span class="code-comment"># print(f"Sum for n=7: {odd_series_sum_loop(7)}")  # 1+3+5+7 = 16</span>
+<span class="code-comment"># print(f"Sum for n=8: {odd_series_sum_loop(8)}")  # 1+3+5+7 = 16 (8 is even, so 7 is the last odd number)</span>
+<span class="code-comment"># print(f"Sum for n=1: {odd_series_sum_loop(1)}")  # 1 = 1</span></code></pre>
+                    <div class="explanation">
+                        <p><strong>Line-by-line explanation of <code>odd_series_sum_loop(limit_n)</code>:</strong>
+                            <ul>
+                                <li><code>total_sum = 0</code>: Initializes a variable to store the sum.</li>
+                                <li><code>for i in range(1, limit_n + 1, 2):</code>:
+                                    <ul>
+                                        <li><code>range()</code> generates a sequence of numbers.</li>
+                                        <li><code>1</code>: Starts the sequence from 1 (the first odd number).</li>
+                                        <li><code>limit_n + 1</code>: Goes up to <code>limit_n</code>. We add 1 because <code>range</code> excludes the stop value, ensuring <code>limit_n</code> is considered if it's odd.</li>
+                                        <li><code>2</code>: The step value. This makes the loop jump by 2 in each iteration (1, 3, 5, ...), effectively picking only odd numbers.</li>
+                                    </ul>
+                                </li>
+                                <li><code>total_sum += i</code>: In each iteration, the current odd number <code>i</code> is added to <code>total_sum</code>.</li>
+                                <li><code>return total_sum</code>: After the loop finishes, the function returns the calculated sum.</li>
+                            </ul>
+                        </p>
+                    </div>
+
+                    <p><strong>Method 2: Mathematical Formula (More Efficient)</strong></p>
+                    <p>The sum of the first <code>k</code> odd numbers is <code>k²</code>. We first need to find how many odd numbers (<code>k</code>) are there up to <code>n</code>.</p>
+                    <p>If <code>n</code> is the last odd number in the series, then <code>n = 2k - 1</code>. So, <code>k = (n + 1) / 2</code>.</p>
+                    <pre><code class="code-keyword">def</code> <code class="code-function">odd_series_sum_formula</code>(<code class="code-variable">limit_n</code>):
+    <code class="code-string">"""Calculates sum using mathematical formula."""</code>
+    <code class="code-keyword">if</code> <code class="code-variable">limit_n</code> <code class="code-operator"><</code> <code class="code-number">1</code>:
+        <code class="code-keyword">return</code> <code class="code-number">0</code>
+    <code class="code-comment"># Find the largest odd number less than or equal to limit_n</span>
+    <code class="code-keyword">if</code> <code class="code-variable">limit_n</code> <code class="code-operator">%</code> <code class="code-number">2</code> <code class="code-operator">==</code> <code class="code-number">0</code>:
+        <code class="code-variable">last_odd</code> <code class="code-operator">=</code> <code class="code-variable">limit_n</code> <code class="code-operator">-</code> <code class="code-number">1</code> <span class="code-comment"># If n is even, the last odd in series is n-1</span>
+    <code class="code-keyword">else</code>:
+        <code class="code-variable">last_odd</code> <code class="code-operator">=</code> <code class="code-variable">limit_n</code>    <span class="code-comment"># If n is odd, n is the last odd in series</span>
+
+    <code class="code-keyword">if</code> <code class="code-variable">last_odd</code> <code class="code-operator"><</code> <code class="code-number">1</code>: <span class="code-comment"># Handles case where n=0 after adjustment</span>
+        <code class="code-keyword">return</code> <code class="code-number">0</code>
+
+    <code class="code-comment"># Number of odd terms (k) in the series up to last_odd</span>
+    <code class="code-comment"># For a series 1, 3, 5, ..., m (where m is last_odd), m = 2k - 1 => k = (m+1)/2</span>
+    <code class="code-variable">k</code> <code class="code-operator">=</code> (<code class="code-variable">last_odd</code> <code class="code-operator">+</code> <code class="code-number">1</code>) <code class="code-operator">//</code> <code class="code-number">2</code> <span class="code-comment"># Use integer division</span>
+    <code class="code-keyword">return</code> <code class="code-variable">k</code> <code class="code-operator">**</code> <code class="code-number">2</code> <span class="code-comment"># Sum is k squared</span>
+
+<code class="code-comment"># Test with formula method</span>
+<code class="code-keyword">try</code>:
+    <code class="code-variable">n_val_formula</code> <code class="code-operator">=</code> <code class="code-function">int</code>(<code class="code-function">input</code>(<code class="code-string">"Enter n for formula method: "</code>))
+    <code class="code-variable">result_formula</code> <code class="code-operator">=</code> <code class="code-function">odd_series_sum_formula</code>(<code class="code-variable">n_val_formula</code>)
+    <code class="code-keyword">print</code>(<code class="code-string">f"Sum (formula) up to {n_val_formula} is: {result_formula}"</code>)
+<code class="code-keyword">except</code> <code class="code-variable">ValueError</code>:
+    <code class="code-keyword">print</code>(<code class="code-string">"Invalid input."</code>)</code></pre>
+                     <div class="explanation">
+                        <p>The formula method is generally more efficient for large values of <code>n</code> as it doesn't require iteration. The problem asks to "create a function," and the loop method is a direct implementation of the series summation. The formula is a good alternative to be aware of.</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const questionBlocks = document.querySelectorAll('.question-block');
+
+            questionBlocks.forEach(block => {
+                const header = block.querySelector('.question-header');
+                header.addEventListener('click', function () {
+                    // Toggle the 'open' class on the parent .question-block
+                    block.classList.toggle('open');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
