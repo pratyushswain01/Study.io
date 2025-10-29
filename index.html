@@ -6,12 +6,9 @@
     <title>Anti-Corruption Quiz</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Load "Inter" font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Use Inter as the default font */
+        /* Add Inter font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -19,745 +16,1247 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <main class="max-w-3xl mx-auto p-4 sm:p-8 bg-white rounded-lg shadow-md my-8">
+    <!-- Main Content Container -->
+    <div class="container mx-auto max-w-3xl p-4 md:p-8">
         
-        <!-- The main heading you requested -->
-        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">
-            Anti-Corruption Quiz 
-        </h1>
+        <!-- Header Card -->
+        <div class="bg-white rounded-xl shadow-lg p-6 md:p-10 mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">
+                Anti-Corruption Quiz
+            </h1>
+            <p class="text-center text-gray-600">
+                Review 100 questions and answers on anti-corruption. The correct answer is listed below each question.
+            </p>
+        </div>
+
+        <!-- Quiz Questions Card -->
+        <div class="bg-white rounded-xl shadow-lg p-6 md:p-10">
+
+            <!-- Category 1 -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-6 border-b-2 border-blue-100 pb-2">
+                    Category 1: Core Concepts & Definitions
+                </h2>
+                
+                <div class="space-y-6">
+                    <!-- Question 1 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">1. What is the most widely accepted definition of corruption?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The act of voting in an election</li>
+                            <li>B) The abuse of entrusted power for private gain</li>
+                            <li>C) A failure to pay taxes</li>
+                            <li>D) An inefficient government bureaucracy</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 2 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">2. Which of the following best describes 'bribery'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Giving, promising, or receiving an undue advantage to influence a decision</li>
+                            <li>B) Criticizing a public official</li>
+                            <li>C) A government policy that is unpopular</li>
+                            <li>D) Poor customer service</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 3 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">3. What is 'nepotism'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The practice of hiring based on merit</li>
+                            <li>B) The favoritism shown to relatives and friends in economic or employment terms</li>
+                            <li>C) A system of government with a monarch</li>
+                            <li>D) The act of stealing from an employer</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 4 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">4. 'Embezzlement' refers to:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The theft or misappropriation of funds placed in one's trust</li>
+                            <li>B) Offering a bribe to an official</li>
+                            <li>C) Evading taxes on imported goods</li>
+                            <li>D) Using inside information for stock trading</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 5 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">5. What is 'extortion'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Offering a gift as a sign of respect</li>
+                            <li>B) Legally acquiring property</li>
+                            <li>C) Obtaining something, especially money, through force or threats</li>
+                            <li>D) A legitimate government fee</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 6 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">6. The term 'cronyism' means:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Awarding jobs and other advantages to friends or trusted colleagues</li>
+                            <li>B) A system of time-keeping</li>
+                            <li>C) A belief in democratic principles</li>
+                            <li>D) The study of ancient civilizations</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 7 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">7. A 'facilitation payment' (or 'grease payment') is:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A large bribe to win a major contract</li>
+                            <li>B) A small payment to expedite a routine government action</li>
+                            <li>C) A legal donation to a political party</li>
+                            <li>D) A fee for professional services</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 8 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">8. What does the term 'kickback' mean?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A form of exercise</li>
+                            <li>B) A payment made to someone who has facilitated a transaction or appointment</li>
+                            <li>C) A legal tax refund</li>
+                            <li>D) A sudden, forceful recoil</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 9 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">9. 'Sextortion' is a form of corruption in which:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Money is exchanged for goods</li>
+                            <li>B) Entrusted power is abused to extract sexual favours</li>
+                            <li>C) A company hides its profits</li>
+                            <li>D) An election is rigged</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 10 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">10. What is 'influence peddling'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The illegal practice of using one's influence in government for personal gain</li>
+                            <li>B) A legal form of lobbying</li>
+                            <li>C) Selling products door-to-door</li>
+                            <li>D) Writing an opinion piece in a newspaper</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 2 -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-6 border-b-2 border-blue-100 pb-2">
+                    Category 2: Types & Forms of Corruption
+                </h2>
+                <div class="space-y-6">
+                    <!-- Question 11 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">11. 'Petty corruption' refers to:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Large-scale theft of state resources by high-level officials</li>
+                            <li>B) Everyday abuse of power by low- and mid-level public officials</li>
+                            <li>C) Corruption involving only small businesses</li>
+                            <li>D) Corruption that is not considered a serious crime</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 12 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">12. 'Grand corruption' is best described as:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Corruption that involves a very small amount of money</li>
+                            <li>B) Corruption that occurs at the highest levels of government</li>
+                            <li>C) A bribe paid to a police officer</li>
+                            <li>D) An inefficient legal system</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 13 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">13. 'Systemic corruption' (or 'endemic corruption') means:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Corruption that is an isolated event</li>
+                            <li>B) Corruption that has become a regular and expected part of society</li>
+                            <li>C) A type of computer virus</li>
+                            <li>D) Corruption that only happens in one specific department</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 14 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">14. What is 'political corruption'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The use of powers by government officials for illegitimate private gain</li>
+                            <li>B) A disagreement between two political parties</li>
+                            <li>C) The process of running for office</li>
+                            <li>D) A legal campaign contribution</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 15 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">15. 'Judicial corruption' refers to corruption-related misconduct of:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Police officers</li>
+                            <li>B) Politicians</li>
+                            <li>C) Judges, prosecutors, and other judicial officials</li>
+                            <li>D) Tax collectors</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 16 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">16. The "revolving door" phenomenon refers to:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The movement of individuals between public office and lobbying jobs</li>
+                            <li>B) A type of security system</li>
+                            <li>C) The high turnover rate of low-level employees</li>
+                            <li>D) A constantly changing political policy</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 17 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">17. What is a 'conflict of interest'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A situation where a person's private interests could improperly influence their official duties</li>
+                            <li>B) A disagreement between two colleagues</li>
+                            <li>C) A legal debate in court</li>
+                            <li>D) A protest against a government policy</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 18 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">18. What is 'state capture'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A military invasion of a country</li>
+                            <li>B) A form of systemic corruption where private interests significantly influence a state's decision-making</li>
+                            <li>C) The nationalization of private industries</li>
+                            <li>D) A successful election campaign</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 19 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">19. Which of the following is NOT typically considered a form of corruption?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Bribery</li>
+                            <li>B) Embezzlement</li>
+                            <li>C) Paying a legally mandated tax or fee</li>
+                            <li>D) Nepotism</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 20 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">20. 'Collusion' in the context of corruption means:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A secret agreement between two or more parties to limit open competition</li>
+                            <li>B) A head-on crash</li>
+                            <li>C) A public-private partnership</li>
+                            <li>D) A transparent bidding process</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 3 -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-6 border-b-2 border-blue-100 pb-2">
+                    Category 3: International Frameworks & Organizations
+                </h2>
+                <div class="space-y-6">
+                    <!-- Question 21 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">21. What is the full name of the primary global convention against corruption?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The UN Charter</li>
+                            <li>B) The UN Convention against Corruption (UNCAC)</li>
+                            <li>C) The Geneva Convention</li>
+                            <li>D) The OECD Anti-Bribery Convention</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 22 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">22. On which date is 'International Anti-Corruption Day' observed?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) December 9th</li>
+                            <li>B) January 1st</li>
+                            <li>C) July 4th</li>
+                            <li>D) October 24th</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 23 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">23. The UN Convention against Corruption (UNCAC) is mandatory for countries that have:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Signed it</li>
+                            <li>B) Signed and ratified it</li>
+                            <li>C) Only attended the conference</li>
+                            <li>D) Expressed verbal support</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 24 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">24. Which organization adopted the influential Anti-Bribery Convention in 1997?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The United Nations (UN)</li>
+                            <li>B) The World Trade Organization (WTO)</li>
+                            <li>C) The Organisation for Economic Co-operation and Development (OECD)</li>
+                            <li>D) The World Bank</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 25 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">25. The OECD Anti-Bribery Convention specifically focuses on bribing:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Domestic public officials</li>
+                            <li>B) Foreign public officials in international business transactions</li>
+                            <li>C) Private company executives</li>
+                            <li>D) All of the above</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 26 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">26. Which UN body is the 'guardian' of the UNCAC?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) UNICEF</li>
+                            <li>B) The UN Security Council</li>
+                            <li>C) The UN Office on Drugs and Crime (UNODC)</li>
+                            <li>D) UNESCO</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 27 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">27. The World Bank's 'StAR' initiative, aimed at recovering stolen assets, stands for:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Stolen Asset Recovery Initiative</li>
+                            <li>B) Stop All Thefts and Robberies</li>
+                            <li>C) Secure Transactions and Reporting</li>
+                            <li>D) Strategic Asset Repatriation</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 28 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">28. Which of these is a key pillar of the UNCAC?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Prevention</li>
+                            <li>B) Criminalization and law enforcement</li>
+                            <li>C) International cooperation and asset recovery</li>
+                            <li>D) All of the above</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: D</p>
+                    </div>
+                    <!-- Question 29 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">29. The 'Financial Action Task Force' (FATF) is an inter-governmental body that sets standards to combat:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Climate change</li>
+                            <li>B) Human trafficking</li>
+                            <li>C) Money laundering and terrorist financing</li>
+                            <li>D) Software piracy</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 30 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">30. What does the term 'asset recovery' mean in the anti-corruption context?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The process of finding a new job</li>
+                            <li>B) The process of recovering and returning the proceeds of corruption to a country</li>
+                            <li>C) A company's plan to recover from financial loss</li>
+                            <li>D) Discovering new natural resources</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 4 -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-6 border-b-2 border-blue-100 pb-2">
+                    Category 4: Key Global Anti-Corruption Laws
+                </h2>
+                <div class="space-y-6">
+                    <!-- Question 31 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">31. What does 'FCPA' stand for?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Federal Corruption Prevention Act</li>
+                            <li>B) Foreign Corrupt Practices Act</li>
+                            <li>C) Financial Crimes and Punishment Agency</li>
+                            <li>D) Federal Corporate Policy Act</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 32 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">32. The FCPA is a federal law of which country?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) United Kingdom</li>
+                            <li>B) Canada</li>
+                            <li>C) Australia</li>
+                            <li>D) United States</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: D</p>
+                    </div>
+                    <!-- Question 33 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">33. The FCPA has two main provisions: anti-bribery and...</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Accounting (books and records)</li>
+                            <li>B) Environmental protection</li>
+                            <li>C) Workplace safety</li>
+                            <li>D) Election funding</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 34 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">34. The UK Bribery Act (2010) is known for being...</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Very lenient on corporations</li>
+                            <li>B) One of the strictest anti-bribery laws in the world</li>
+                            <li>C) Only applicable to UK citizens</li>
+                            <li>D) A law that was repealed</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 35 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">35. A key offense under the UK Bribery Act is the "failure of a commercial organisation to prevent bribery," which introduces...</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A new tax</li>
+                            <li>B) Strict corporate liability</li>
+                            <li>C) A reward for bribery</li>
+                            <li>D) A holiday for employees</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 36 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">36. Unlike the FCPA, the UK Bribery Act explicitly outlaws:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Bribing foreign officials</li>
+                            <li>B) Bribing domestic officials</li>
+                            <li>C) Facilitation payments</li>
+                            <li>D) Keeping false records</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 37 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">37. The UK Bribery Act covers bribery of:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Only foreign public officials</li>
+                            <li>B) Only domestic public officials</li>
+                            <li>C) Both public officials and private persons</li>
+                            <li>D) Only political figures</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 38 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">38. The FCPA's jurisdiction applies to:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Only US companies</li>
+                            <li>B) US companies, foreign companies listed on US stock exchanges, and individuals acting on their behalf</li>
+                            <li>C) Only foreign companies</li>
+                            <li>D) Only individuals, not corporations</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 39 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">39. What is the "adequate procedures" defence under the UK Bribery Act?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A defence for an individual who paid a bribe</li>
+                            <li>B) A defence for a company showing it had measures in place to prevent bribery</li>
+                            <li>C) A legal procedure to sue the government</li>
+                            <li>D) A way to make a facilitation payment legally</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 40 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">40. Bribing a foreign public official is an example of...</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Transnational corruption</li>
+                            <li>B) Petty corruption</li>
+                            <li>C) A purely domestic crime</li>
+                            <li>D) A non-punishable act</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 5 -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-6 border-b-2 border-blue-100 pb-2">
+                    Category 5: Anti-Corruption in India
+                </h2>
+                <div class="space-y-6">
+                    <!-- Question 41 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">41. What is the primary anti-corruption law in India?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The Indian Penal Code, 1860</li>
+                            <li>B) The Prevention of Corruption Act, 1988</li>
+                            <li>C) The Companies Act, 2013</li>
+                            <li>D) The Right to Information Act, 2005</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 42 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">42. Who is the "Lokpal" in India?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The Prime Minister</li>
+                            <li>B) The Chief Justice of India</li>
+                            <li>C) An anti-corruption ombudsman to investigate officials and politicians</li>
+                            <li>D) The head of the Election Commission</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 43 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">43. The Lokpal and Lokayuktas Act was passed in India in which year?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) 1947</li>
+                            <li>B) 1991</li>
+                            <li>C) 2005</li>
+                            <li>D) 2013</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: D</p>
+                    </div>
+                    <!-- Question 44 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">44. What does 'CVC' stand for?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Central Vigilance Commission</li>
+                            <li>B) Central Verification Committee</li>
+                            <li>C) Chief Vigilance of Corporations</li>
+                            <li>D) Commission for Vice Control</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 45 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">45. What is the main role of the Central Vigilance Commission (CVC)?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) To prosecute criminals</li>
+                            <li>B) To advise and guide Central Government agencies in the field of vigilance</li>
+                            <li>C) To conduct elections</li>
+                            <li>D) To make foreign policy</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 46 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">46. Which agency is the main investigating arm of the CVC?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The Central Bureau of Investigation (CBI)</li>
+                            <li>B) The local state police</li>
+                            <li>C) The Enforcement Directorate (ED)</li>
+                            <li>D) The National Investigation Agency (NIA)</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 47 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">47. The Prevention of Money Laundering Act (PMLA), 2002 is enforced by which agency?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Central Bureau of Investigation (CBI)</li>
+                            <li>B) Enforcement Directorate (ED)</li>
+                            <li>C) National Investigation Agency (NIA)</li>
+                            <li>D) Serious Fraud Investigation Office (SFIO)</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 48 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">48. The term 'Lokayukta' refers to:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The national ombudsman</li>
+                            <li>B) The state-level anti-corruption ombudsman</li>
+                            <li>C) A judge of the Supreme Court</li>
+                            <li>D) The governor of a state</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 49 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">49. The 2018 amendment to the Prevention of Corruption Act (India) made...</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Giving a bribe a specific offence for the first time</li>
+                            <li>B) Bribery legal</li>
+                            <li>C) The CVC powerless</li>
+                            <li>D) It easier to pay facilitation payments</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 50 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">50. What does the "Benami Transactions (Prohibition) Act" aim to curb?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Smuggling</li>
+                            <li>B) Counterfeit currency</li>
+                            <li>C) Transactions made in a fictitious name or where the owner is not the true beneficiary</li>
+                            <li>D) Tax evasion on salaries</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 6 -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-6 border-b-2 border-blue-100 pb-2">
+                    Category 6: Whistleblowing & Transparency
+                </h2>
+                <div class="space-y-6">
+                    <!-- Question 51 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">51. What is a 'whistleblower'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A person who works as a sports referee</li>
+                            <li>B) A person who exposes any kind of information or activity that is illegal or unethical</li>
+                            <li>C) A musician in a band</li>
+                            <li>D) A weather forecasting instrument</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 52 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">52. India's 'Whistle Blowers Protection Act' was passed in which year?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) 1995</li>
+                            <li>B) 2001</li>
+                            <li>C) 2014</li>
+                            <li>D) 2019</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 53 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">53. What is the primary purpose of a whistleblower protection law?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) To reward the whistleblower financially</li>
+                            <li>B) To protect the whistleblower from retaliation and victimization</li>
+                            <li>C) To ensure the whistleblower's identity is always made public</li>
+                            <li>D) To punish the whistleblower for leaking information</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 54 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">54. What is 'transparency' in the context of governance?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The ability of citizens to see through buildings</li>
+                            <li>B) The principle that information on government actions should be open and accessible</li>
+                            <li>C) A complex legal doctrine</li>
+                            <li>D) A type of tax</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 55 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">55. The 'Right to Information' (RTI) is a tool primarily for promoting:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Government secrecy</li>
+                            <li>B) Transparency and accountability</li>
+                            <li>C) National security</li>
+                            <li>D) Faster court cases</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 56 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">56. India's landmark Right to Information (RTI) Act was enacted in:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) 1990</li>
+                            <li>B) 2000</li>
+                            <li>C) 2005</li>
+                            <li>D) 2010</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 57 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">57. What is a 'social audit'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A financial audit of a social media company</li>
+                            <li>B) An audit of a company's social life</li>
+                            <li>C) A process where citizens collectively monitor government performance and spending</li>
+                            <li>D) A survey about social habits</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 58 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">58. 'E-Governance' (Electronic Governance) helps reduce corruption by:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Increasing face-to-face interaction</li>
+                            <li>B) Making rules more complicated</li>
+                            <li>C) Reducing discretion and increasing transparency through automated processes</li>
+                            <li>D) Requiring paper forms for all services</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 59 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">59. Which organization is famous for publishing leaked government and corporate documents, often from whistleblowers?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The World Bank</li>
+                            <li>B) WikiLeaks</li>
+                            <li>C) Greenpeace</li>
+                            <li>D) Amnesty International</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 60 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">60. The 'Public Interest Disclosure and Protection of Informers' resolution in India is commonly known as:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The Lokpal Bill</li>
+                            <li>B) The Whistleblower Resolution</li>
+                            <li>C) The CVC guidelines</li>
+                            <li>D) The RTI Act</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 7 -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-6 border-b-2 border-blue-100 pb-2">
+                    Category 7: Global Indices & Watchdogs
+                </h2>
+                <div class="space-y-6">
+                    <!-- Question 61 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">61. Which global civil society organization is best known for its fight against corruption and its annual Corruption Perceptions Index (CPI)?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Amnesty International</li>
+                            <li>B) Human Rights Watch</li>
+                            <li>C) Transparency International</li>
+                            <li>D) The World Economic Forum</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 62 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">62. Transparency International (TI) is a...</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Government agency</li>
+                            <li>B) For-profit corporation</li>
+                            <li>C) Non-governmental organization (NGO)</li>
+                            <li>D) United Nations body</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 63 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">63. The 'Corruption Perceptions Index' (CPI) published by TI ranks countries based on:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The number of corruption cases filed</li>
+                            <li>B) The perceived levels of public sector corruption</li>
+                            <li>C) The amount of money recovered from corruption</li>
+                            <li>D) The actual, documented level of corruption</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 64 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">64. On the CPI scale (0-100), what does a score of '100' mean?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Very corrupt</li>
+                            <li>B) Very clean (no corruption)</li>
+                            <li>C) A perfect economy</li>
+                            <li>D) A complete lack of data</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 65 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">65. On the CPI scale (0-100), what does a score of '0' mean?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Very clean</li>
+                            <li>B) Very corrupt</li>
+                            <li>C) A country with no government</li>
+                            <li>D) A new country</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 66 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">66. What is the 'Bribe Payers Index' (BPI), also published by TI?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) It ranks countries on the likelihood of their companies to bribe abroad</li>
+                            <li>B) It ranks individuals who have paid bribes</li>
+                            <li>C) It lists the most corrupt companies</li>
+                            <li>D) It is the same as the CPI</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 67 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">67. The World Bank's 'Worldwide Governance Indicators' (WGI) measure, among other things:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A country's average rainfall</li>
+                            <li>B) A country's 'Control of Corruption'</li>
+                            <li>C) The number of political parties</li>
+                            <li>D) The literacy rate</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 68 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">68. What is an 'Integrity Pact'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A personal diet plan</li>
+                            <li>B) A tool developed by TI where bidders in a public contract agree not to bribe</li>
+                            <li>C) A peace treaty between two countries</li>
+                            <li>D) A new type of software</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 69 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">69. Where is Transparency International (TI) headquartered?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) New York, USA</li>
+                            <li>B) Geneva, Switzerland</li>
+                            <li>C) Berlin, Germany</li>
+                            <li>D) London, UK</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 70 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">70. If a country's CPI score improves from 25 to 30, it indicates:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A perception that corruption has worsened</li>
+                            <li>B) A perception that corruption has lessened</li>
+                            <li>C) No change in perception</li>
+                            <li>D) The country has become more secretive</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 8 -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-6 border-b-2 border-blue-100 pb-2">
+                    Category 8: Impact & Consequences of Corruption
+                </h2>
+                <div class="space-y-6">
+                    <!-- Question 71 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">71. How does corruption affect a country's economy?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) It promotes fair competition</li>
+                            <li>B) It diverts funds from public services (like health and education)</li>
+                            <li>C) It ensures all citizens get equal resources</li>
+                            <li>D) It generally has no significant effect</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 72 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">72. Corruption's impact on public services often means:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Higher quality services for everyone</li>
+                            <li>B) Lower quality services, or access being denied to those who can't pay bribes</li>
+                            <li>C) Services are delivered faster</li>
+                            <li>D) Services become free for all</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 73 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">73. In a corrupt system, who is often hurt the most?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The wealthy and powerful</li>
+                            <li>B) The poor and marginalized</li>
+                            <li>C) The politicians</li>
+                            <li>D) Foreign tourists</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 74 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">74. How does corruption impact business and foreign investment?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) It encourages investment because it's easier to get things done</li>
+                            <li>B) It discourages investment due to lack of predictability and high costs</li>
+                            <li>C) It has no effect on investment decisions</li>
+                            <li>D) It only encourages local businesses</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 75 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">75. Corruption erodes public...</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Wealth</li>
+                            <li>B) Trust in government and institutions</li>
+                            <li>C) Interest in sports</li>
+                            <li>D) Access to technology</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 76 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">76. Corruption in the judiciary leads to:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Faster justice for all</li>
+                            <li>B) A denial of the rule of law and fair trials</li>
+                            <li>C) More lawyers getting rich</li>
+                            <li>D) A more efficient court system</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 77 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">77. Corruption's link to environmental degradation often involves:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Bribes to bypass environmental regulations or for illegal logging/mining</li>
+                            <li>B) More funding for national parks</li>
+                            <li>C) Stricter enforcement of pollution laws</li>
+                            <li>D) A shift to green energy</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 78 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">78. Which of these is a direct consequence of corruption in government procurement?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) High-quality goods and services at the lowest price</li>
+                            <li>B) Poor quality public infrastructure (roads, bridges, etc.) at an inflated price</li>
+                            <li>C) Faster completion of projects</li>
+                            <li>D) Too many companies bidding for a project</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 79 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">79. How does corruption threaten national security?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) By allowing for the smuggling of weapons, drugs, and people</li>
+                            <li>B) By strengthening border controls</li>
+                            <li>C) By funding the military adequately</li>
+                            <li>D) By promoting diplomatic relations</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 80 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">80. What is meant by the "vicious cycle" of corruption?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Corruption leads to poverty, which in turn creates conditions for more corruption</li>
+                            <li>B) A term for a revolving door</li>
+                            <li>C) A type of financial market</li>
+                            <li>D) The annual CPI report</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 9 -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-6 border-b-2 border-blue-100 pb-2">
+                    Category 9: Anti-Corruption Strategies & Ethics
+                </h2>
+                <div class="space-y-6">
+                    <!-- Question 81 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">81. Which of the following is considered a key "preventive" measure against corruption?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Harsher prison sentences</li>
+                            <li>B) Public awareness campaigns and education</li>
+                            <li>C) More police officers</li>
+                            <li>D) International sanctions</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 82 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">82. An effective anti-corruption strategy must combine prevention, criminalization, and...</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Public participation</li>
+                            <li>B) Secrecy</li>
+                            <li>C) High taxes</li>
+                            <li>D) Military action</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 83 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">83. A 'Code of Conduct' for public officials is designed to:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Set clear ethical standards and rules</li>
+                            <li>B) Increase their salaries</li>
+                            <li>C) Give them more power</li>
+                            <li>D) Make their jobs more complicated</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 84 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">84. 'Asset declaration' for public officials is a tool used to:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Help them invest their money</li>
+                            <li>B) Identify illicit enrichment and conflicts of interest</li>
+                            <li>C) Calculate their income tax</li>
+                            <li>D) Choose their official car</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 85 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">85. 'Due diligence' in a business context refers to:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A payment that is due</li>
+                            <li>B) The research and verification a company should do before a transaction</li>
+                            <li>C) A type of corporate tax</li>
+                            <li>D) A company's vacation policy</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 86 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">86. What is 'social accountability'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A theory in sociology</li>
+                            <li>B) The process of citizens and civil society holding public officials accountable</li>
+                            <li>C) Having a large number of friends on social media</li>
+                            <li>D) A government's accounting department</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 87 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">87. Which of the following is NOT a pillar of 'National Integrity'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) An independent judiciary</li>
+                            <li>B) A free press</li>
+                            <li>C) A strong civil society</li>
+                            <li>D) A state-controlled media with no criticism allowed</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: D</p>
+                    </div>
+                    <!-- Question 88 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">88. What is the role of a free press in fighting corruption?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) To praise the government</li>
+                            <li>B) To act as a 'watchdog' by investigating and exposing wrongdoing</li>
+                            <li>C) To sell advertisements</li>
+                            <li>D) To only report on good news</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 89 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">89. A "zero-tolerance" policy on corruption means:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) All acts of corruption, no matter how small, will be addressed</li>
+                            <li>B) Only grand corruption is a problem</li>
+                            <li>C) Corruption is tolerated up to a certain point</li>
+                            <li>D) A public relations slogan with no real action</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                    <!-- Question 90 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">90. What is 'ethical leadership'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Leading by example with integrity and strong moral principles</li>
+                            <li>B) Leading a company to high profits by any means</li>
+                            <li>C) A style of leadership that is popular</li>
+                            <li>D) A political ideology</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: A</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Category 10 -->
+            <section class="mb-10">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-6 border-b-2 border-blue-100 pb-2">
+                    Category 10: Miscellaneous & Case Studies
+                </h2>
+                <div class="space-y-6">
+                    <!-- Question 91 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">91. The "Bofors scandal" in the 1980s and 1990s was a major corruption case in which country?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Sweden</li>
+                            <li>B) India</li>
+                            <li>C) United States</li>
+                            <li>D) Brazil</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 92 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">92. The "2G spectrum" case was a major political scandal in India involving:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) The sale of food grains</li>
+                            <li>B) The allocation of telecommunications licenses</li>
+                            <li>C) A defence equipment purchase</li>
+                            <li>D) A construction project</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 93 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">93. "Operation Car Wash" (Lava Jato) was a massive anti-corruption investigation that started in which country?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Italy</li>
+                            <li>B) Brazil</li>
+                            <li>C) South Africa</li>
+                            <li>D) Malaysia</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 94 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">94. The "Panama Papers" leak in 2016 exposed:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A secret new technology</li>
+                            <li>B) A network of offshore shell companies used for tax evasion and hiding wealth</li>
+                            <li>C) A list of whistleblowers</li>
+                            <li>D) A government's war plans</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 95 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">95. Which Indian social activist led a major anti-corruption movement in 2011, demanding the 'Jan Lokpal Bill'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Medha Patkar</li>
+                            <li>B) Kailash Satyarthi</li>
+                            <li>C) Anna Hazare</li>
+                            <li>D) Aruna Roy</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 96 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">96. The term "Graft" is a synonym for:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Hard work</li>
+                            <li>B) A type of skin surgery</li>
+                            <li>C) Corruption, especially the acquisition of money through dishonest means</li>
+                            <li>D) A gardening technique</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 97 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">97. What is a 'shell company'?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A company that sells sea shells</li>
+                            <li>B) A company with no active business or significant assets, often used to obscure ownership</li>
+                            <li>C) A new, innovative startup</li>
+                            <li>D) A company that builds houses</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 98 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">98. 'Quid pro quo' is a Latin phrase meaning:</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) "For the public good"</li>
+                            <li>B) "Something for something"</li>
+                            <li>C) "Buyer beware"</li>
+                            <li>D) "Innocent until proven guilty"</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: B</p>
+                    </div>
+                    <!-- Question 99 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">99. The "Vigilance Awareness Week" is observed in India to coincide with the birthday of which leader?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) Mahatma Gandhi</li>
+                            <li>B) Jawaharlal Nehru</li>
+                            <li>C) Sardar Vallabhbhai Patel</li>
+                            <li>D) B. R. Ambedkar</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                    <!-- Question 100 -->
+                    <div>
+                        <p class="text-lg font-semibold mb-2">100. Which of these is a 'Red Flag' for corruption in procurement?</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                            <li>A) A public and open bidding process</li>
+                            <li>B) Clear and consistent evaluation criteria</li>
+                            <li>C) An unexplained, last-minute change in bidders</li>
+                            <li>D) Multiple qualified companies competing</li>
+                        </ul>
+                        <p class="answer mt-2 p-3 bg-green-50 text-green-800 rounded-lg border border-green-200 font-semibold">Answer: C</p>
+                    </div>
+                </div>
+            </section>
+
+        </div> <!-- End of Questions Card -->
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm mt-8 pb-4">
+            &copy; @ 2025 Pratyush Swain. All rights reserved.
+        </footer>
+
+    </div> <!-- End of Main Container -->
+
+    <!-- JavaScript for Toggle Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all toggle buttons
+            const buttons = document.querySelectorAll('.toggle-answer');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Find the answer element that is the next sibling
+                    const answer = button.nextElementSibling;
+                    
+                    // Toggle the 'hidden' class on the answer
+                    answer.classList.toggle('hidden');
+
+                    // Change button text based on visibility
+                    if (answer.classList.contains('hidden')) {
+                        button.textContent = 'Show Answer';
+                    } else {
+                        button.textContent = 'Hide Answer';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
 
-        <!-- 
-            This <pre> tag displays the quiz as "normal text" 
-            while preserving the line breaks and formatting.
-            - `whitespace-pre-wrap` ensures it wraps on small screens.
-            - `font-sans` overrides the default monospace font to look like "normal text".
-        -->
-        <div class="quiz-content">
-            <pre class="text-sm sm:text-base text-gray-700 leading-relaxed whitespace-pre-wrap font-sans">
-100 MCQs on Anti-Corruption
-
-Category 1: Core Concepts & Definitions
-
-1. What is the most widely accepted definition of corruption?
-A) The act of voting in an election
-B) The abuse of entrusted power for private gain
-C) A failure to pay taxes
-D) An inefficient government bureaucracy
-Answer: B
-
-2. Which of the following best describes 'bribery'?
-A) Giving, promising, or receiving an undue advantage to influence a decision
-B) Criticizing a public official
-C) A government policy that is unpopular
-D) Poor customer service
-Answer: A
-
-3. What is 'nepotism'?
-A) The practice of hiring based on merit
-B) The favoritism shown to relatives and friends in economic or employment terms
-C) A system of government with a monarch
-D) The act of stealing from an employer
-Answer: B
-
-4. 'Embezzlement' refers to:
-A) The theft or misappropriation of funds placed in one's trust
-B) Offering a bribe to an official
-C) Evading taxes on imported goods
-D) Using inside information for stock trading
-Answer: A
-
-5. What is 'extortion'?
-A) Offering a gift as a sign of respect
-B) Legally acquiring property
-C) Obtaining something, especially money, through force or threats
-D) A legitimate government fee
-Answer: C
-
-6. The term 'cronyism' means:
-A) Awarding jobs and other advantages to friends or trusted colleagues
-B) A system of time-keeping
-C) A belief in democratic principles
-D) The study of ancient civilizations
-Answer: A
-
-7. A 'facilitation payment' (or 'grease payment') is:
-A) A large bribe to win a major contract
-B) A small payment to expedite a routine government action
-C) A legal donation to a political party
-D) A fee for professional services
-Answer: B
-
-8. What does the term 'kickback' mean?
-A) A form of exercise
-B) A payment made to someone who has facilitated a transaction or appointment
-C) A legal tax refund
-D) A sudden, forceful recoil
-Answer: B
-
-9. 'Sextortion' is a form of corruption in which:
-A) Money is exchanged for goods
-B) Entrusted power is abused to extract sexual favours
-C) A company hides its profits
-D) An election is rigged
-Answer: B
-
-10. What is 'influence peddling'?
-A) The illegal practice of using one's influence in government for personal gain
-B) A legal form of lobbying
-C) Selling products door-to-door
-D) Writing an opinion piece in a newspaper
-Answer: A
-
----
-
-Category 2: Types & Forms of Corruption
-
-11. 'Petty corruption' refers to:
-A) Large-scale theft of state resources by high-level officials
-B) Everyday abuse of power by low- and mid-level public officials
-C) Corruption involving only small businesses
-D) Corruption that is not considered a serious crime
-Answer: B
-
-12. 'Grand corruption' is best described as:
-A) Corruption that involves a very small amount of money
-B) Corruption that occurs at the highest levels of government
-C) A bribe paid to a police officer
-D) An inefficient legal system
-Answer: B
-
-13. 'Systemic corruption' (or 'endemic corruption') means:
-A) Corruption that is an isolated event
-B) Corruption that has become a regular and expected part of society
-C) A type of computer virus
-D) Corruption that only happens in one specific department
-Answer: B
-
-14. What is 'political corruption'?
-A) The use of powers by government officials for illegitimate private gain
-B) A disagreement between two political parties
-C) The process of running for office
-D) A legal campaign contribution
-Answer: A
-
-15. 'Judicial corruption' refers to corruption-related misconduct of:
-A) Police officers
-B) Politicians
-C) Judges, prosecutors, and other judicial officials
-D) Tax collectors
-Answer: C
-
-16. The "revolving door" phenomenon refers to:
-A) The movement of individuals between public office and lobbying jobs
-B) A type of security system
-C) The high turnover rate of low-level employees
-D) A constantly changing political policy
-Answer: A
-
-17. What is a 'conflict of interest'?
-A) A situation where a person's private interests could improperly influence their official duties
-B) A disagreement between two colleagues
-C) A legal debate in court
-D) A protest against a government policy
-Answer: A
-
-18. What is 'state capture'?
-A) A military invasion of a country
-B) A form of systemic corruption where private interests significantly influence a state's decision-making
-C) The nationalization of private industries
-D) A successful election campaign
-Answer: B
-
-19. Which of the following is NOT typically considered a form of corruption?
-A) Bribery
-B) Embezzlement
-C) Paying a legally mandated tax or fee
-D) Nepotism
-Answer: C
-
-20. 'Collusion' in the context of corruption means:
-A) A secret agreement between two or more parties to limit open competition
-B) A head-on crash
-C) A public-private partnership
-D) A transparent bidding process
-Answer: A
-
----
-
-Category 3: International Frameworks & Organizations
-
-21. What is the full name of the primary global convention against corruption?
-A) The UN Charter
-B) The UN Convention against Corruption (UNCAC)
-C) The Geneva Convention
-D) The OECD Anti-Bribery Convention
-Answer: B
-
-22. On which date is 'International Anti-Corruption Day' observed?
-A) December 9th
-B) January 1st
-C) July 4th
-D) October 24th
-Answer: A
-
-23. The UN Convention against Corruption (UNCAC) is mandatory for countries that have:
-A) Signed it
-B) Signed and ratified it
-C) Only attended the conference
-D) Expressed verbal support
-Answer: B
-
-24. Which organization adopted the influential Anti-Bribery Convention in 1997?
-A) The United Nations (UN)
-B) The World Trade Organization (WTO)
-C) The Organisation for Economic Co-operation and Development (OECD)
-D) The World Bank
-Answer: C
-
-25. The OECD Anti-Bribery Convention specifically focuses on bribing:
-A) Domestic public officials
-B) Foreign public officials in international business transactions
-C) Private company executives
-D) All of the above
-Answer: B
-
-26. Which UN body is the 'guardian' of the UNCAC?
-A) UNICEF
-B) The UN Security Council
-C) The UN Office on Drugs and Crime (UNODC)
-D) UNESCO
-Answer: C
-
-27. The World Bank's 'StAR' initiative, aimed at recovering stolen assets, stands for:
-A) Stolen Asset Recovery Initiative
-B) Stop All Thefts and Robberies
-C) Secure Transactions and Reporting
-D) Strategic Asset Repatriation
-Answer: A
-
-28. Which of these is a key pillar of the UNCAC?
-A) Prevention
-B) Criminalization and law enforcement
-C) International cooperation and asset recovery
-D) All of the above
-Answer: D
-
-29. The 'Financial Action Task Force' (FATF) is an inter-governmental body that sets standards to combat:
-A) Climate change
-B) Human trafficking
-C) Money laundering and terrorist financing
-D) Software piracy
-Answer: C
-
-30. What does the term 'asset recovery' mean in the anti-corruption context?
-A) The process of finding a new job
-B) The process of recovering and returning the proceeds of corruption to a country
-C) A company's plan to recover from financial loss
-D) Discovering new natural resources
-Answer: B
-
----
-
-Category 4: Key Global Anti-Corruption Laws
-
-31. What does 'FCPA' stand for?
-A) Federal Corruption Prevention Act
-B) Foreign Corrupt Practices Act
-C) Financial Crimes and Punishment Agency
-D) Federal Corporate Policy Act
-Answer: B
-
-32. The FCPA is a federal law of which country?
-A) United Kingdom
-B) Canada
-C) Australia
-D) United States
-Answer: D
-
-33. The FCPA has two main provisions: anti-bribery and...
-A) Accounting (books and records)
-B) Environmental protection
-C) Workplace safety
-D) Election funding
-Answer: A
-
-34. The UK Bribery Act (2010) is known for being...
-A) Very lenient on corporations
-B) One of the strictest anti-bribery laws in the world
-C) Only applicable to UK citizens
-D) A law that was repealed
-Answer: B
-
-35. A key offense under the UK Bribery Act is the "failure of a commercial organisation to prevent bribery," which introduces...
-A) A new tax
-B) Strict corporate liability
-C) A reward for bribery
-D) A holiday for employees
-Answer: B
-
-36. Unlike the FCPA, the UK Bribery Act explicitly outlaws:
-A) Bribing foreign officials
-B) Bribing domestic officials
-C) Facilitation payments
-D) Keeping false records
-Answer: C
-
-37. The UK Bribery Act covers bribery of:
-A) Only foreign public officials
-B) Only domestic public officials
-C) Both public officials and private persons
-D) Only political figures
-Answer: C
-
-38. The FCPA's jurisdiction applies to:
-A) Only US companies
-B) US companies, foreign companies listed on US stock exchanges, and individuals acting on their behalf
-C) Only foreign companies
-D) Only individuals, not corporations
-Answer: B
-
-39. What is the "adequate procedures" defence under the UK Bribery Act?
-A) A defence for an individual who paid a bribe
-B) A defence for a company showing it had measures in place to prevent bribery
-C) A legal procedure to sue the government
-D) A way to make a facilitation payment legally
-Answer: B
-
-40. Bribing a foreign public official is an example of...
-A) Transnational corruption
-B) Petty corruption
-C) A purely domestic crime
-D) A non-punishable act
-Answer: A
-
----
-
-Category 5: Anti-Corruption in India (Agencies & Legislation)
-
-41. What is the primary anti-corruption law in India?
-A) The Indian Penal Code, 1860
-B) The Prevention of Corruption Act, 1988
-C) The Companies Act, 2013
-D) The Right to Information Act, 2005
-Answer: B
-
-42. Who is the "Lokpal" in India?
-A) The Prime Minister
-B) The Chief Justice of India
-C) An anti-corruption ombudsman to investigate officials and politicians
-D) The head of the Election Commission
-Answer: C
-
-43. The Lokpal and Lokayuktas Act was passed in India in which year?
-A) 1947
-B) 1991
-C) 2005
-D) 2013
-Answer: D
-
-44. What does 'CVC' stand for?
-A) Central Vigilance Commission
-B) Central Verification Committee
-C) Chief Vigilance of Corporations
-D) Commission for Vice Control
-Answer: A
-
-45. What is the main role of the Central Vigilance Commission (CVC)?
-A) To prosecute criminals
-B) To advise and guide Central Government agencies in the field of vigilance
-C) To conduct elections
-D) To make foreign policy
-Answer: B
-
-46. Which agency is the main investigating arm of the CVC?
-A) The Central Bureau of Investigation (CBI)
-B) The local state police
-C) The Enforcement Directorate (ED)
-D) The National Investigation Agency (NIA)
-Answer: A
-
-47. The Prevention of Money Laundering Act (PMLA), 2002 is enforced by which agency?
-A) Central Bureau of Investigation (CBI)
-B) Enforcement Directorate (ED)
-C) National Investigation Agency (NIA)
-D) Serious Fraud Investigation Office (SFIO)
-Answer: B
-
-48. The term 'Lokayukta' refers to:
-A) The national ombudsman
-B) The state-level anti-corruption ombudsman
-C) A judge of the Supreme Court
-D) The governor of a state
-Answer: B
-
-49. The 2018 amendment to the Prevention of Corruption Act (India) made...
-A) Giving a bribe a specific offence for the first time
-B) Bribery legal
-C) The CVC powerless
-D) It easier to pay facilitation payments
-Answer: A
-
-50. What does the "Benami Transactions (Prohibition) Act" aim to curb?
-A) Smuggling
-B) Counterfeit currency
-C) Transactions made in a fictitious name or where the owner is not the true beneficiary
-D) Tax evasion on salaries
-Answer: C
-
----
-
-Category 6: Whistleblowing & Transparency
-
-51. What is a 'whistleblower'?
-A) A person who works as a sports referee
-B) A person who exposes any kind of information or activity that is illegal or unethical
-C) A musician in a band
-D) A weather forecasting instrument
-Answer: B
-
-52. India's 'Whistle Blowers Protection Act' was passed in which year?
-A) 1995
-B) 2001
-C) 2014
-D) 2019
-Answer: C
-
-53. What is the primary purpose of a whistleblower protection law?
-A) To reward the whistleblower financially
-B) To protect the whistleblower from retaliation and victimization
-C) To ensure the whistleblower's identity is always made public
-D) To punish the whistleblower for leaking information
-Answer: B
-
-54. What is 'transparency' in the context of governance?
-A) The ability of citizens to see through buildings
-B) The principle that information on government actions should be open and accessible
-C) A complex legal doctrine
-D) A type of tax
-Answer: B
-
-55. The 'Right to Information' (RTI) is a tool primarily for promoting:
-A) Government secrecy
-B) Transparency and accountability
-C) National security
-D) Faster court cases
-Answer: B
-
-56. India's landmark Right to Information (RTI) Act was enacted in:
-A) 1990
-B) 2000
-C) 2005
-D) 2010
-Answer: C
-
-57. What is a 'social audit'?
-A) A financial audit of a social media company
-B) An audit of a company's social life
-C) A process where citizens collectively monitor government performance and spending
-D) A survey about social habits
-Answer: C
-
-58. 'E-Governance' (Electronic Governance) helps reduce corruption by:
-A) Increasing face-to-face interaction
-B) Making rules more complicated
-C) Reducing discretion and increasing transparency through automated processes
-D) Requiring paper forms for all services
-Answer: C
-
-59. Which organization is famous for publishing leaked government and corporate documents, often from whistleblowers?
-A) The World Bank
-B) WikiLeaks
-C) Greenpeace
-D) Amnesty International
-Answer: B
-
-60. The 'Public Interest Disclosure and Protection of Informers' resolution in India is commonly known as:
-A) The Lokpal Bill
-B) The Whistleblower Resolution
-C) The CVC guidelines
-D) The RTI Act
-Answer: B
-
----
-
-Category 7: Global Indices & Watchdogs
-
-61. Which global civil society organization is best known for its fight against corruption and its annual Corruption Perceptions Index (CPI)?
-A) Amnesty International
-B) Human Rights Watch
-C) Transparency International
-D) The World Economic Forum
-Answer: C
-
-62. Transparency International (TI) is a...
-A) Government agency
-B) For-profit corporation
-C) Non-governmental organization (NGO)
-D) United Nations body
-Answer: C
-
-63. The 'Corruption Perceptions Index' (CPI) published by TI ranks countries based on:
-A) The number of corruption cases filed
-B) The perceived levels of public sector corruption
-C) The amount of money recovered from corruption
-D) The actual, documented level of corruption
-Answer: B
-
-64. On the CPI scale (0-100), what does a score of '100' mean?
-A) Very corrupt
-B) Very clean (no corruption)
-C) A perfect economy
-D) A complete lack of data
-Answer: B
-
-65. On the CPI scale (0-100), what does a score of '0' mean?
-A) Very clean
-B) Very corrupt
-C) A country with no government
-D) A new country
-Answer: B
-
-66. What is the 'Bribe Payers Index' (BPI), also published by TI?
-A) It ranks countries on the likelihood of their companies to bribe abroad
-B) It ranks individuals who have paid bribes
-C) It lists the most corrupt companies
-D) It is the same as the CPI
-Answer: A
-
-67. The World Bank's 'Worldwide Governance Indicators' (WGI) measure, among other things:
-A) A country's average rainfall
-B) A country's 'Control of Corruption'
-C) The number of political parties
-D) The literacy rate
-Answer: B
-
-68. What is an 'Integrity Pact'?
-A) A personal diet plan
-B) A tool developed by TI where bidders in a public contract agree not to bribe
-C) A peace treaty between two countries
-D) A new type of software
-Answer: B
-
-69. Where is Transparency International (TI) headquartered?
-A) New York, USA
-B) Geneva, Switzerland
-C) Berlin, Germany
-D) London, UK
-Answer: C
-
-70. If a country's CPI score improves from 25 to 30, it indicates:
-A) A perception that corruption has worsened
-B) A perception that corruption has lessened
-C) No change in perception
-D) The country has become more secretive
-Answer: B
-
----
-
-Category 8: Impact & Consequences of Corruption
-
-71. How does corruption affect a country's economy?
-A) It promotes fair competition
-B) It diverts funds from public services (like health and education)
-C) It ensures all citizens get equal resources
-D) It generally has no significant effect
-Answer: B
-
-72. Corruption's impact on public services often means:
-A) Higher quality services for everyone
-B) Lower quality services, or access being denied to those who can't pay bribes
-C) Services are delivered faster
-D) Services become free for all
-Answer: B
-
-73. In a corrupt system, who is often hurt the most?
-A) The wealthy and powerful
-B) The poor and marginalized
-C) The politicians
-D) Foreign tourists
-Answer: B
-
-74. How does corruption impact business and foreign investment?
-A) It encourages investment because it's easier to get things done
-B) It discourages investment due to lack of predictability and high costs
-C) It has no effect on investment decisions
-D) It only encourages local businesses
-Answer: B
-
-75. Corruption erodes public...
-A) Wealth
-B) Trust in government and institutions
-C) Interest in sports
-D) Access to technology
-Answer: B
-
-76. Corruption in the judiciary leads to:
-A) Faster justice for all
-B) A denial of the rule of law and fair trials
-C) More lawyers getting rich
-D) A more efficient court system
-Answer: B
-
-77. Corruption's link to environmental degradation often involves:
-A) Bribes to bypass environmental regulations or for illegal logging/mining
-B) More funding for national parks
-C) Stricter enforcement of pollution laws
-D) A shift to green energy
-Answer: A
-
-78. Which of these is a direct consequence of corruption in government procurement?
-A) High-quality goods and services at the lowest price
-B) Poor quality public infrastructure (roads, bridges, etc.) at an inflated price
-C) Faster completion of projects
-D) Too many companies bidding for a project
-Answer: B
-
-79. How does corruption threaten national security?
-A) By allowing for the smuggling of weapons, drugs, and people
-B) By strengthening border controls
-C) By funding the military adequately
-D) By promoting diplomatic relations
-Answer: A
-
-80. What is meant by the "vicious cycle" of corruption?
-A) Corruption leads to poverty, which in turn creates conditions for more corruption
-BB) A term for a revolving door
-C) A type of financial market
-D) The annual CPI report
-Answer: A
-
----
-
-Category 9: Anti-Corruption Strategies & Ethics
-
-81. Which of the following is considered a key "preventive" measure against corruption?
-A) Harsher prison sentences
-B) Public awareness campaigns and education
-C) More police officers
-D) International sanctions
-Answer: B
-
-82. An effective anti-corruption strategy must combine prevention, criminalization, and...
-A) Public participation
-B) Secrecy
-C) High taxes
-D) Military action
-Answer: A
-
-83. A 'Code of Conduct' for public officials is designed to:
-A) Set clear ethical standards and rules
-B) Increase their salaries
-C) Give them more power
-D) Make their jobs more complicated
-Answer: A
-
-84. 'Asset declaration' for public officials is a tool used to:
-A) Help them invest their money
-B) Identify illicit enrichment and conflicts of interest
-C) Calculate their income tax
-D) Choose their official car
-Answer: B
-
-85. 'Due diligence' in a business context refers to:
-A) A payment that is due
-B) The research and verification a company should do before a transaction
-C) A type of corporate tax
-D) A company's vacation policy
-Answer: B
-
-86. What is 'social accountability'?
-A) A theory in sociology
-B) The process of citizens and civil society holding public officials accountable
-C) Having a large number of friends on social media
-D) A government's accounting department
-Answer: B
-
-87. Which of the following is NOT a pillar of 'National Integrity'?
-A) An independent judiciary
-B) A free press
-C) A strong civil society
-D) A state-controlled media with no criticism allowed
-Answer: D
-
-88. What is the role of a free press in fighting corruption?
-A) To praise the government
-B) To act as a 'watchdog' by investigating and exposing wrongdoing
-C) To sell advertisements
-D) To only report on good news
-Answer: B
-
-89. A "zero-tolerance" policy on corruption means:
-A) All acts of corruption, no matter how small, will be addressed
-B) Only grand corruption is a problem
-C) Corruption is tolerated up to a certain point
-D) A public relations slogan with no real action
-Answer: A
-
-90. What is 'ethical leadership'?
-A) Leading by example with integrity and strong moral principles
-B) Leading a company to high profits by any means
-C) A style of leadership that is popular
-D) A political ideology
-Answer: A
-
----
-
-Category 10: Miscellaneous & Case Studies
-
-91. The "Bofors scandal" in the 1980s and 1990s was a major corruption case in which country?
-A) Sweden
-B) India
-C) United States
-D) Brazil
-Answer: B
-
-92. The "2G spectrum" case was a major political scandal in India involving:
-A) The sale of food grains
-B) The allocation of telecommunications licenses
-C) A defence equipment purchase
-D) A construction project
-Answer: B
-
-93. "Operation Car Wash" (Lava Jato) was a massive anti-corruption investigation that started in which country?
-A) Italy
-B) Brazil
-C) South Africa
-D) Malaysia
-Answer: B
-
-94. The "Panama Papers" leak in 2016 exposed:
-A) A secret new technology
-B) A network of offshore shell companies used for tax evasion and hiding wealth
-C) A list of whistleblowers
-D) A government's war plans
-Answer: B
-
-95. Which Indian social activist led a major anti-corruption movement in 2011, demanding the 'Jan Lokpal Bill'?
-A) Medha Patkar
-B) Kailash Satyarthi
-C) Anna Hazare
-D) Aruna Roy
-Answer: C
-
-96. The term "Graft" is a synonym for:
-A) Hard work
-B) A type of skin surgery
-C) Corruption, especially the acquisition of money through dishonest means
-D) A gardening technique
-Answer: C
-
-97. What is a 'shell company'?
-A) A company that sells sea shells
-B) A company with no active business or significant assets, often used to obscure ownership
-C) A new, innovative startup
-D) A company that builds houses
-Answer: B
-
-98. 'Quid pro quo' is a Latin phrase meaning:
-A) "For the public good"
-B) "Something for something"
-C) "Buyer beware"
-D) "Innocent until proven guilty"
-Answer: B
-
-9Hence, I am creating a text file instead of an HTML file.
